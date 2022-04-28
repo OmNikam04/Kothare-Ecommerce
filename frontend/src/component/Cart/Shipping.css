@@ -77,6 +77,9 @@
 .shippingBtn:hover {
   background-color: rgb(179, 66, 46);
 }
+.giftCharge{
+  color: green;
+}
 
 @media screen and (max-width: 600px) {
   .shippingBox {

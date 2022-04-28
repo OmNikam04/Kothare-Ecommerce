@@ -25,7 +25,12 @@ const Shipping = ({ history }) => {
   const [country, setCountry] = useState(shippingInfo.country);
   const [pinCode, setPinCode] = useState(shippingInfo.pinCode);
   const [phoneNo, setPhoneNo] = useState(shippingInfo.phoneNo);
+  const [isCheckedGift, setIsCheckedGift] = useState(false);
 
+  const handleOnChangeGift = () => {
+    setIsCheckedGift(!isCheckedGift);
+  };
+  
   const shippingSubmit = (e) => {
     e.preventDefault();
 
@@ -34,7 +39,7 @@ const Shipping = ({ history }) => {
       return;
     }
     dispatch(
-      saveShippingInfo({ address, city, state, country, pinCode, phoneNo })
+      saveShippingInfo({ address, city, state, country, pinCode, phoneNo, isCheckedGift })
     );
     history.push("/order/confirm");
   };
@@ -141,15 +146,16 @@ const Shipping = ({ history }) => {
             <div className="gift">
               {/* <CardGiftcardRounded /> */}
               <label>
-                
               <input
                 type="checkbox"
-                placeholder="Phone Number"
-                size="10"
+                name="gift"
+                checked={isCheckedGift}
+                onChange={handleOnChangeGift}
               /> 
               sent as gift?
                 </label>
             </div>
+            {isCheckedGift && <p className="giftCharge">Additional $50 will be charged for gift!</p>}
             <input
               type="submit"
               value="Continue"

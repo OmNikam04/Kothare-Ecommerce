@@ -53,6 +53,12 @@ const OrderDetails = ({ match }) => {
                       `${order.shippingInfo.address}, ${order.shippingInfo.city}, ${order.shippingInfo.state}, ${order.shippingInfo.pinCode}, ${order.shippingInfo.country}`}
                   </span>
                 </div>
+                {order.shippingInfo.isCheckedGift && <div>
+                  <p>Is Gift:</p>
+                  <span>
+                    This item will be sent as gift
+                  </span>
+                </div> }
               </div>
               <Typography>Payment</Typography>
               <div className="orderDetailsContainerBox">
