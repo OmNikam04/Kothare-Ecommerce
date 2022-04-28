@@ -22,11 +22,12 @@
 .profileContainer > div:first-child > h1 {
   color: rgba(0, 0, 0, 0.555);
   font: 500 2.2vmax "Roboto";
-  transform: translateX(-10vmax) translateY(-2vmax);
+  transform: translateX(25vmax) translateY(-5vmax);
 }
 
 .profileContainer > div:first-child > img {
   width: 20vmax;
+  height: 20vmax;
   border-radius: 100%;
   transition: all 0.5s;
 }
@@ -86,6 +87,7 @@
   text-align: center;
   transition: all 0.5s;
   margin: 1vmax 0;
+  border-radius: 25px;
 }
 
 .profileContainer > div:last-child > div:last-child > a:hover {

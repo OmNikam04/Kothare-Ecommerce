@@ -5,6 +5,7 @@
 
 body {
   cursor: url("./images/cursor.png"), auto;
+  text-transform: capitalize;
 }
 
 /* Chrome, Safari, Edge, Opera */

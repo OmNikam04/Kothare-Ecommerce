@@ -50,12 +50,13 @@ const OrderList = ({ history }) => {
   }, [dispatch, alert, error, deleteError, history, isDeleted]);
 
   const columns = [
-    { field: "id", headerName: "Order ID", minWidth: 300, flex: 1 },
+    // { field: "id", headerName: "Order ID", minWidth: 200, flex: 0.5},
+    { field: "name", headerName: "Order name", minWidth: 150, flex: 0.5},
 
     {
       field: "status",
       headerName: "Status",
-      minWidth: 150,
+      minWidth: 70,
       flex: 0.5,
       cellClassName: (params) => {
         return params.getValue(params.id, "status") === "Delivered"
@@ -67,23 +68,23 @@ const OrderList = ({ history }) => {
       field: "itemsQty",
       headerName: "Items Qty",
       type: "number",
-      minWidth: 150,
-      flex: 0.4,
+      minWidth: 100,
+      flex: 0.6,
     },
 
     {
       field: "amount",
       headerName: "Amount",
       type: "number",
-      minWidth: 270,
+      minWidth: 200,
       flex: 0.5,
     },
 
     {
       field: "actions",
-      flex: 0.3,
+      flex: 0.4,
       headerName: "Actions",
-      minWidth: 150,
+      minWidth: 70,
       type: "number",
       sortable: false,
       renderCell: (params) => {
@@ -112,6 +113,7 @@ const OrderList = ({ history }) => {
     orders.forEach((item) => {
       rows.push({
         id: item._id,
+        name: item.orderItems[0].name,
         itemsQty: item.orderItems.length,
         amount: item.totalPrice,
         status: item.orderStatus,

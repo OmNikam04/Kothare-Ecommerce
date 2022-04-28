@@ -54,7 +54,8 @@ export const myOrders = () => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: MY_ORDERS_FAIL,
-      payload: error.response.data.message,
+      // payload: error.response.data.message,
+      payload: error,
     });
   }
 };

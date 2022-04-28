@@ -1,4 +1,4 @@
-.loading {
+/* .loading {
   width: 100vw;
   height: 100vh;
   background-color: white;
@@ -21,4 +21,11 @@
   to {
     transform: rotateZ(-360deg);
   }
+} */
+.loader_div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
 }
