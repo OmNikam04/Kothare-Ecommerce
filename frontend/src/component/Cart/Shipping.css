@@ -41,7 +41,7 @@
   width: 100%;
   align-items: center;
 }
-
+.gift,
 .shippingForm > div > input,
 .shippingForm > div > select {
   padding: 1vmax 4vmax;

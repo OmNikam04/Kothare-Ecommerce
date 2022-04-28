@@ -12,6 +12,7 @@ import TransferWithinAStationIcon from "@material-ui/icons/TransferWithinAStatio
 import { Country, State } from "country-state-city";
 import { useAlert } from "react-alert";
 import CheckoutSteps from "../Cart/CheckoutSteps";
+import {CardGiftcardRounded} from "@material-ui/icons"
 
 const Shipping = ({ history }) => {
   const dispatch = useDispatch();
@@ -136,6 +137,19 @@ const Shipping = ({ history }) => {
               </div>
             )}
 
+            {/* Adding send as gift button */}
+            <div className="gift">
+              {/* <CardGiftcardRounded /> */}
+              <label>
+                
+              <input
+                type="checkbox"
+                placeholder="Phone Number"
+                size="10"
+              /> 
+              sent as gift?
+                </label>
+            </div>
             <input
               type="submit"
               value="Continue"
