@@ -31,7 +31,7 @@ const orderSchema = new mongoose.Schema({
     isGift:{
       type: Boolean,
       required: false,
-      defalut: false
+      default: false
     },
   },
   orderItems: [

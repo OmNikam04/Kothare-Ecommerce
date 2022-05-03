@@ -57,6 +57,12 @@ const ConfirmOrder = ({ history }) => {
                 <p>Address:</p>
                 <span>{address}</span>
               </div>
+              {/* Gift Functionality */}
+              <div>
+                <p>Order will be sent as Gift:</p>
+                <span>{shippingInfo.isGift ? "Yes": "No"}</span>
+              </div>
+              {/* Gift Functionality end */}
             </div>
           </div>
           <div className="confirmCartItems">
