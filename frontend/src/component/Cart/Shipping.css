@@ -18,7 +18,7 @@
 .shippingHeading {
   text-align: center;
   color: rgba(0, 0, 0, 0.664);
-  font: 400 1.3vmax "Roboto";
+  font: 400 1.3vmax 'Urbanist', sans-serif;
   padding: 1.3vmax;
   border-bottom: 1px solid rgba(0, 0, 0, 0.205);
   width: 50%;
@@ -41,7 +41,6 @@
   width: 100%;
   align-items: center;
 }
-.gift,
 .shippingForm > div > input,
 .shippingForm > div > select {
   padding: 1vmax 4vmax;
@@ -50,8 +49,39 @@
   box-sizing: border-box;
   border: 1px solid rgba(0, 0, 0, 0.267);
   border-radius: 4px;
-  font: 300 0.9vmax cursive;
+  /* font: 300 0.9vmax cursive; */
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 400;
+  font-size: .9rem;
   outline: none;
+}
+
+
+.gift{
+  padding: 1vmax 4vmax;
+  padding-right: 1vmax;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.267);
+  border-radius: 4px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.form-control {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 400;
+  font-size: .9rem;
+  line-height: 1.1;
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+} 
+.gift > div> svg{
+  transform: translateX(-3vmax);
+  font-size: 1.6vmax;
+  color: rgba(59, 59, 59, 0.623);
 }
 
 .shippingForm > div > svg {
@@ -65,7 +95,10 @@
   border: none;
   background-color: tomato;
   color: white;
-  font: 300 1vmax "Roboto";
+  /* font: 300 1vmax 'Urbanist', sans-serif; */
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 600;
+  font-size: .9rem;
   width: 100%;
   padding: 1vmax;
   cursor: pointer;
@@ -77,6 +110,9 @@
 .shippingBtn:hover {
   background-color: rgb(179, 66, 46);
 }
+.giftCharge{
+  color: green;
+}
 
 @media screen and (max-width: 600px) {
   .shippingBox {
@@ -85,7 +121,10 @@
   }
 
   .shippingHeading {
-    font: 400 6vw "Roboto";
+    /* font: 400 6vw 'Urbanist', sans-serif; */
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 400;
+    font-size: 6vw;
     padding: 5vw;
   }
 
@@ -96,7 +135,9 @@
   .shippingForm > div > input,
   .shippingForm > div > select {
     padding: 5vw 10vw;
-    font: 300 4vw cursive;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 400;
+    font-size: 5vw;
   }
 
   .shippingForm > div > svg {
@@ -105,7 +146,13 @@
   }
 
   .shippingBtn {
-    font: 300 4vw "Roboto";
+    font: 300 4vw 'Urbanist', sans-serif;
     padding: 4vw;
+  }
+
+  .gift > div> svg{
+    transform: translateX(-2.7vmax);
+    font-size: 3vmax;
+    color: rgba(59, 59, 59, 0.623);
   }
 }

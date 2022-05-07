@@ -88,6 +88,16 @@ const ProcessOrder = ({ history, match }) => {
                           `${order.shippingInfo.address}, ${order.shippingInfo.city}, ${order.shippingInfo.state}, ${order.shippingInfo.pinCode}, ${order.shippingInfo.country}`}
                       </span>
                     </div>
+                    {/* Gift Functionality */}
+                      <div>
+                        <p >Order will be sent as Gift:</p>
+                        <span className={
+                          order.shippingInfo && order.shippingInfo.isGift === true
+                            ? "greenColor"
+                            : "redColor"
+                        }>{order.shippingInfo && order.shippingInfo.isGift ? "YES":"NO"}</span>
+                      </div>
+                    {/* Gift Functionality end */}
                   </div>
 
                   <Typography>Payment</Typography>

@@ -60,11 +60,6 @@ const ProductDetails = ({ match }) => {
     setQuantity(qty);
   };
 
-
-
-
-  
-
   const addToCartHandler = () => {
     dispatch(addItemsToCart(match.params.id, quantity));
     alert.success("Item Added To Cart");
@@ -87,21 +82,31 @@ const ProductDetails = ({ match }) => {
   };
 
   useEffect(() => {
-    if (error) {
-      alert.error(error);
-      dispatch(clearErrors());
+    let unmounted = false
+
+    if(!unmounted){
+      
+      if (error) {
+        alert.error(error);
+        dispatch(clearErrors());
+      }
+
+      if (reviewError) {
+        alert.error(reviewError);
+        dispatch(clearErrors());
+      }
+
+      if (success) {
+        alert.success("Review Submitted Successfully");
+        dispatch({ type: NEW_REVIEW_RESET });
+      }
+
+      dispatch(getProductDetails(match.params.id));
     }
 
-    if (reviewError) {
-      alert.error(reviewError);
-      dispatch(clearErrors());
+    return ()=>{
+      unmounted = true
     }
-
-    if (success) {
-      alert.success("Review Submitted Successfully");
-      dispatch({ type: NEW_REVIEW_RESET });
-    }
-    dispatch(getProductDetails(match.params.id));
   }, [dispatch, match.params.id, error, alert, reviewError, success]);
 
   return (
@@ -156,7 +161,7 @@ const ProductDetails = ({ match }) => {
                 </div>
 
                 <p>
-                  Status:
+                  Status: 
                   <b className={product.Stock < 1 ? "redColor" : "greenColor"}>
                     {product.Stock < 1 ? "OutOfStock" : "InStock"}
                   </b>

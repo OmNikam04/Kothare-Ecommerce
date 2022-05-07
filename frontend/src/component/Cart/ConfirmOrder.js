@@ -19,7 +19,16 @@ const ConfirmOrder = ({ history }) => {
 
   const tax = subtotal * 0.18;
 
-  const totalPrice = subtotal + tax + shippingCharges;
+  const sendAsGift = shippingInfo.isGift
+  let giftCharge = 50;
+
+  let totalPrice;
+
+  if(sendAsGift){
+    totalPrice = subtotal + tax + shippingCharges + giftCharge ;
+  }else{
+    totalPrice = subtotal + tax + shippingCharges;
+  }
 
   const address = `${shippingInfo.address}, ${shippingInfo.city}, ${shippingInfo.state}, ${shippingInfo.pinCode}, ${shippingInfo.country}`;
 
@@ -57,6 +66,12 @@ const ConfirmOrder = ({ history }) => {
                 <p>Address:</p>
                 <span>{address}</span>
               </div>
+              {/* Gift Functionality */}
+              <div>
+                <p>Order will be sent as Gift:</p>
+                <span>{shippingInfo.isGift ? "Yes": "No"}</span>
+              </div>
+              {/* Gift Functionality end */}
             </div>
           </div>
           <div className="confirmCartItems">
@@ -95,6 +110,12 @@ const ConfirmOrder = ({ history }) => {
                 <p>GST:</p>
                 <span>₹{tax}</span>
               </div>
+              {/* Gift Functionality */}
+              <div>
+                <p>Gift Charge: </p>
+                <span>{shippingInfo.isGift ? '₹'+50:'₹'+0}</span>
+              </div>
+              {/* Gift Functionality end */}
             </div>
 
             <div className="orderSummaryTotal">

@@ -25,7 +25,12 @@ const Shipping = ({ history }) => {
   const [country, setCountry] = useState(shippingInfo.country);
   const [pinCode, setPinCode] = useState(shippingInfo.pinCode);
   const [phoneNo, setPhoneNo] = useState(shippingInfo.phoneNo);
+  const [isGift, setIsGift] = useState(false);
 
+  const handleOnChangeGift = () => {
+    setIsGift(!isGift);
+  };
+  
   const shippingSubmit = (e) => {
     e.preventDefault();
 
@@ -34,7 +39,7 @@ const Shipping = ({ history }) => {
       return;
     }
     dispatch(
-      saveShippingInfo({ address, city, state, country, pinCode, phoneNo })
+      saveShippingInfo({ address, city, state, country, pinCode, phoneNo, isGift })
     );
     history.push("/order/confirm");
   };
@@ -108,7 +113,7 @@ const Shipping = ({ history }) => {
                 onChange={(e) => setCountry(e.target.value)}
               >
                 <option value="">Country</option>
-                {Country &&
+                {Country && 
                   Country.getAllCountries().map((item) => (
                     <option key={item.isoCode} value={item.isoCode}>
                       {item.name}
@@ -139,17 +144,21 @@ const Shipping = ({ history }) => {
 
             {/* Adding send as gift button */}
             <div className="gift">
+              <div>
+              <CardGiftcardRounded/>
+              </div>
               {/* <CardGiftcardRounded /> */}
-              <label>
-                
+              <label className="form-control">
               <input
                 type="checkbox"
-                placeholder="Phone Number"
-                size="10"
+                name="gift"
+                checked={isGift}
+                onChange={handleOnChangeGift}
               /> 
-              sent as gift?
+              Sent as gift?
                 </label>
             </div>
+            {isGift && <p className="giftCharge">Additional ₹50 will be charged for gift!</p>}
             <input
               type="submit"
               value="Continue"

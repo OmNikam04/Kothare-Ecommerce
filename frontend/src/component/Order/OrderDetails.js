@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useRef } from "react";
 import "./orderDetails.css";
 import { useSelector, useDispatch } from "react-redux";
 import MetaData from "../layout/MetaData";
@@ -7,8 +7,17 @@ import { Typography } from "@material-ui/core";
 import { getOrderDetails, clearErrors } from "../../actions/orderAction";
 import Loader from "../layout/Loader/Loader";
 import { useAlert } from "react-alert";
+import { useReactToPrint } from "react-to-print"
 
 const OrderDetails = ({ match }) => {
+
+  // For print functionality
+  const componentRef = useRef()
+  const handlePrint = useReactToPrint({
+    content:()=> componentRef.current
+  })
+  // End for print functionality
+
   const { order, error, loading } = useSelector((state) => state.orderDetails);
 
   const dispatch = useDispatch();
@@ -29,7 +38,7 @@ const OrderDetails = ({ match }) => {
       ) : (
         <Fragment>
           <MetaData title="Order Details" />
-          <div className="orderDetailsPage">
+          <div ref={componentRef} className="orderDetailsPage">
             <div className="orderDetailsContainer">
               <Typography component="h1">
                 Order #{order && order._id}
@@ -43,7 +52,7 @@ const OrderDetails = ({ match }) => {
                 <div>
                   <p>Phone:</p>
                   <span>
-                    {order.shippingInfo && order.shippingInfo.phoneNo}
+                    {order.shippingInfo && order.shippingInfo.phoneNo }
                   </span>
                 </div>
                 <div>
@@ -53,6 +62,12 @@ const OrderDetails = ({ match }) => {
                       `${order.shippingInfo.address}, ${order.shippingInfo.city}, ${order.shippingInfo.state}, ${order.shippingInfo.pinCode}, ${order.shippingInfo.country}`}
                   </span>
                 </div>
+                 {/* Gift Functionality */}
+              <div>
+                <p>Order will be sent as Gift:</p>
+                <span>{order.shippingInfo && order.shippingInfo.isGift ? "Yes":"No"}</span>
+              </div>
+              {/* Gift Functionality end */}
               </div>
               <Typography>Payment</Typography>
               <div className="orderDetailsContainerBox">
@@ -113,6 +128,11 @@ const OrderDetails = ({ match }) => {
               </div>
             </div>
           </div>
+          {/* Adding Print Functionality */}
+          <div className="print_btn_div">
+            <button onClick={handlePrint} className="print-button">Print Receipt</button>
+          </div>
+          {/* End of Adding Print Functionality */}
         </Fragment>
       )}
     </Fragment>
