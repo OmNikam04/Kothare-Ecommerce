@@ -113,7 +113,7 @@ const Shipping = ({ history }) => {
                 onChange={(e) => setCountry(e.target.value)}
               >
                 <option value="">Country</option>
-                {Country &&
+                {Country && 
                   Country.getAllCountries().map((item) => (
                     <option key={item.isoCode} value={item.isoCode}>
                       {item.name}
@@ -144,18 +144,21 @@ const Shipping = ({ history }) => {
 
             {/* Adding send as gift button */}
             <div className="gift">
+              <div>
+              <CardGiftcardRounded/>
+              </div>
               {/* <CardGiftcardRounded /> */}
-              <label>
+              <label className="form-control">
               <input
                 type="checkbox"
                 name="gift"
                 checked={isGift}
                 onChange={handleOnChangeGift}
               /> 
-              sent as gift?
+              Sent as gift?
                 </label>
             </div>
-            {isGift && <p className="giftCharge">Additional $50 will be charged for gift!</p>}
+            {isGift && <p className="giftCharge">Additional ₹50 will be charged for gift!</p>}
             <input
               type="submit"
               value="Continue"
