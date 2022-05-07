@@ -107,3 +107,28 @@
     font: 100 4vw "Roboto";
   }
 }
+
+
+/* Start of Print button styling  */
+.print_btn_div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.print-button {
+  background-color: #FF7258; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  border-radius: 10px;
+}
+
+/* Darker background on mouse-over */
+.print-button:hover {
+  background-color: #e36852;
+}
+
+/* End of Print button styling */
