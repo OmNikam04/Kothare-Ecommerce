@@ -77,10 +77,18 @@ const ProductList = ({ history }) => {
     },
 
     {
+      field: "discountedPrice",
+      headerName: "discountedPrice",
+      type: "number",
+      minWidth: 250,
+      flex: 0.5,
+    },
+
+    {
       field: "actions",
       flex: 0.3,
       headerName: "Actions",
-      minWidth: 150,
+      minWidth: 160,
       type: "number",
       sortable: false,
       renderCell: (params) => {
@@ -111,6 +119,7 @@ const ProductList = ({ history }) => {
         id: item._id,
         stock: item.Stock,
         price: item.price,
+        discountedPrice: item.discountedPrice,
         name: item.name,
       });
     });
