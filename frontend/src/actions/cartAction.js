@@ -15,6 +15,7 @@ export const addItemsToCart = (id, quantity) => async (dispatch, getState) => {
       product: data.product._id,
       name: data.product.name,
       price: data.product.price,
+      discountedPrice: data.product.discountedPrice,
       image: data.product.images[0].url,
       stock: data.product.Stock,
       quantity,

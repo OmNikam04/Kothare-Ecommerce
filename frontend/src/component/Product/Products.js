@@ -26,6 +26,7 @@ const Products = ({ match }) => {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [price, setPrice] = useState([0, 25000]);
+  const [discountedPrice, setDiscountedPrice] = useState([0, 25000]);
   const [category, setCategory] = useState("");
 
   const [ratings, setRatings] = useState(0);
@@ -56,7 +57,7 @@ const Products = ({ match }) => {
       dispatch(clearErrors());
     }
 
-    dispatch(getProduct(keyword, currentPage, price, category, ratings));
+    dispatch(getProduct(keyword, currentPage, price,category, ratings));
   }, [dispatch, keyword, currentPage, price, category, ratings, alert, error]);
 
   return (
@@ -86,6 +87,7 @@ const Products = ({ match }) => {
               min={0}
               max={25000}
             />
+
 
             <Typography>Categories</Typography>
             <ul className="categoryBox">
