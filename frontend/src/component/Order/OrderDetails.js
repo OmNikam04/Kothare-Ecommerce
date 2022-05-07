@@ -43,7 +43,7 @@ const OrderDetails = ({ match }) => {
                 <div>
                   <p>Phone:</p>
                   <span>
-                    {order.shippingInfo && order.shippingInfo.phoneNo}
+                    {order.shippingInfo && order.shippingInfo.phoneNo }
                   </span>
                 </div>
                 <div>
@@ -56,7 +56,7 @@ const OrderDetails = ({ match }) => {
                  {/* Gift Functionality */}
               <div>
                 <p>Order will be sent as Gift:</p>
-                <span>{order.shippingInfo.isGift ? "Yes": "No"}</span>
+                <span>{order.shippingInfo && order.shippingInfo.isGift ? "Yes":"No"}</span>
               </div>
               {/* Gift Functionality end */}
               </div>
