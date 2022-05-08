@@ -33,7 +33,7 @@
 
 .detailsBlock-1 > p {
   color: rgba(54, 54, 54, 0.582);
-  font: 200 0.6vmax cursive;
+  font: 200 0.6vmax 'Urbanist', sans-serif;
 }
 
 .detailsBlock-2 {
@@ -47,7 +47,7 @@
 }
 
 .detailsBlock-2-span {
-  font: 200 0.8vmax cursive;
+  font: 200 0.8vmax 'Urbanist', sans-serif;
   color: rgba(0, 0, 0, 0.699);
 }
 
@@ -154,12 +154,13 @@
 
 .reviewsHeading {
   color: #000000be;
+  text-transform: uppercase;
   font: 500 1.4vmax 'Urbanist', sans-serif;
   text-align: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.226);
   padding: 1vmax;
   width: 20vmax;
-  margin: auto;
+  margin:0 auto;
   margin-bottom: 4vmax;
 }
 .reviews {
@@ -188,7 +189,7 @@
 }
 .reviewCardComment {
   color: rgba(0, 0, 0, 0.445);
-  font: 300 0.8vmax cursive;
+  font: 300 0.8vmax 'Urbanist', sans-serif;
 }
 
 .noReviews {
@@ -198,6 +199,9 @@
 }
 
 @media screen and (max-width: 600px) {
+  .reviewsHeading{
+    font: 600 3vmax 'Urbanist', sans-serif;
+  }
   .ProductDetails {
     flex-direction: column;
     height: unset;
@@ -208,25 +212,34 @@
   }
 
   .detailsBlock-1 > h2 {
-    font-size: 2.8vmax;
+    font-size: 3vmax;
     text-align: center;
+    font-weight: 900;
+    text-transform: capitalize;
   }
 
   .detailsBlock-1 > p {
     text-align: center;
-    font-size: 1vmax;
+    font: 500 1.6vmax 'Urbanist', sans-serif;
+    margin:5px 0;
+    letter-spacing: 2px;
+    width: 100%;
   }
 
   .detailsBlock-2 {
     justify-content: center;
+    width: 100%;
+    font: 400 1.6vmax 'Urbanist', sans-serif;
   }
   .detailsBlock-2 > span {
-    font-size: 1.5vmax;
+    
+    font: 500 2.7vmax 'Urbanist', sans-serif;
   }
 
   .detailsBlock-3 > h1 {
-    font: 700 3vmax "Franklin Gothic Medium";
+    font: 700 3vmax 'Urbanist', sans-serif;
     text-align: center;
+    text-transform: capitalize;
   }
 
   .detailsBlock-3-1 {
@@ -239,16 +252,17 @@
   .detailsBlock-3-1-1 > button {
     padding: 1.2vmax;
     width: 4vmax;
+    font: 600 2vmax 'Urbanist', sans-serif;
   }
 
   .detailsBlock-3-1-1 > input {
     padding: 1.5vmax;
     width: 3vmax;
-    font: 400 1.8vmax 'Urbanist', sans-serif;
+    font: 600 2vmax 'Urbanist', sans-serif;
   }
 
   .detailsBlock-3-1 > button:last-child {
-    font: 500 1.7vmax 'Urbanist', sans-serif;
+    font: 600 2.3vmax 'Urbanist', sans-serif;
     padding: 1.5vmax;
     width: 20vmax;
     margin: 3vmax 0;
@@ -257,28 +271,30 @@
   .detailsBlock-3 > p {
     padding: 2.5vmax 0;
     text-align: center;
-    font: 400 2vmax 'Urbanist', sans-serif;
+    font: 600 2vmax 'Urbanist', sans-serif;
+    letter-spacing: 2px;
   }
 
   .detailsBlock-4 {
-    font: 500 2.5vmax sans-serif;
+    padding: 5px;
+    font: 700 3vmax 'Urbanist', sans-serif;
   }
 
   .detailsBlock-4 > p {
-    font: 300 1.8vmax sans-serif;
+    font: 500 2.5vmax 'Urbanist', sans-serif;
   }
 
   .submitReview {
-    font: 500 1.7vmax 'Urbanist', sans-serif;
+    font: 600 2vmax 'Urbanist', sans-serif;
     padding: 1.5vmax;
     width: 20vmax;
     margin: 3vmax 0;
   }
 
   .reviewCard > p {
-    font: 600 3vw 'Urbanist', sans-serif;
+    font: 700 3.5vw 'Urbanist', sans-serif;
   }
   .reviewCardComment {
-    font: 300 5vw cursive;
+    font: 500 4vw 'Urbanist', sans-serif;
   }
 }

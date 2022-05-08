@@ -13,22 +13,23 @@
   display: flex;
   margin: 0.3vmax 1vmax;
   flex-direction: column;
+  gap:10px;
 }
 
 .CartItemCard > div > a {
-  font: 300 0.9vmax cursive;
+  font: 500 1.5vmax 'Urbanist', sans-serif;
   color: rgba(24, 24, 24, 0.815);
   text-decoration: none;
 }
 
 .CartItemCard > div > span {
-  font: 300 0.9vmax 'Urbanist', sans-serif;
+  font: 300 2vmax 'Urbanist', sans-serif;
   color: rgba(24, 24, 24, 0.815);
 }
 
 .CartItemCard > div > p {
   color: tomato;
-  font: 100 0.8vmax 'Urbanist', sans-serif;
+  font: 700 1.5vmax 'Urbanist', sans-serif;
   cursor: pointer;
 }
 
@@ -46,14 +47,14 @@
   }
 
   .CartItemCard > div > a {
-    font: 300 2vmax cursive;
+    font: 500 2vmax 'Urbanist', sans-serif;
   }
 
   .CartItemCard > div > span {
-    font: 300 1.9vmax 'Urbanist', sans-serif;
+    font: 500 2.5vmax 'Urbanist', sans-serif;
   }
 
   .CartItemCard > div > p {
-    font: 100 1.8vmax 'Urbanist', sans-serif;
+    font: 300 3vmax 'Urbanist', sans-serif;
   }
 }
