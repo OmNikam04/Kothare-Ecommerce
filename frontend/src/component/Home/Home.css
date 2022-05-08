@@ -161,5 +161,7 @@
     border: 2px solid red;
     padding: 5px 0;
     transform: translateY(10px);
+    margin: 0 0.5vmax;
+    font: 400 2vmax 'Urbanist',sans-serif;
   }
 }

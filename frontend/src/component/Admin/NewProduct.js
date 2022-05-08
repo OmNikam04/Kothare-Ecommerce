@@ -21,6 +21,7 @@ const NewProduct = ({ history }) => {
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
+  const [discountedPrice, setDiscountedPrice] = useState(0); 
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [Stock, setStock] = useState(0);
@@ -56,6 +57,7 @@ const NewProduct = ({ history }) => {
 
     myForm.set("name", name);
     myForm.set("price", price);
+      myForm.set("discountedPrice", discountedPrice); 
     myForm.set("description", description);
     myForm.set("category", category);
     myForm.set("Stock", Stock);
@@ -117,6 +119,17 @@ const NewProduct = ({ history }) => {
                 required
                 onChange={(e) => setPrice(e.target.value)}
               />
+            </div>
+             
+            <div>
+              <AttachMoneyIcon />
+              <input
+                type="number"
+                placeholder="discountedPrice"
+                required
+                onChange={(e) => setDiscountedPrice(e.target.value)}
+              />
+              
             </div>
 
             <div>

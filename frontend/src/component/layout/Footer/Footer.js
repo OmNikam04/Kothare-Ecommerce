@@ -16,6 +16,7 @@ const Container = styled.div`
   border-top:1px solid grey;
   background:#2b2a2a;
   color:white;
+  margin-top:10vmax;
   ${mobile({ flexDirection: "column", background:"#2b2a2a", color:"white"})}
 `;
 
