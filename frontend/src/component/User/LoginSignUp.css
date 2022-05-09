@@ -24,7 +24,7 @@
 }
 .login_signUp_toggle > p {
   color: rgba(0, 0, 0, 0.678);
-  font: 300 1vmax 'Urbanist', sans-serif;
+  font: 500 1.6vmax 'Urbanist', sans-serif;
   transition: all 0.5s;
   cursor: pointer;
   display: grid;

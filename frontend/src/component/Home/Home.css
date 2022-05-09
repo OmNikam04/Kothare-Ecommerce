@@ -68,8 +68,6 @@
   flex-wrap: wrap;
   justify-content: center;
   max-width: 100%;
-  background-color: #fffbf5f9;
-  border-radius:10px;
 }
 
 .productCard {
@@ -84,10 +82,11 @@
   padding-bottom: 0.5vmax;
   padding:15px 15px;
   border-radius:10px;
+  border:.5px solid rgb(201, 201, 201);
 }
 
 .productCard > img {
-  float: left;
+  float: center;
   width:  100px;
   height: 100px;
   object-fit: scale-down;
