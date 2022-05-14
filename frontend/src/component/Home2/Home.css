@@ -157,7 +157,8 @@ img{
   background: white;
 }
 .btn-buy:hover{
-  background: var(--carribean-green);
+  /* background: var(--carribean-green); */
+  background:black;
   color: #fff;
 }
 .product-info{

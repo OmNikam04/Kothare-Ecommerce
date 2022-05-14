@@ -48,19 +48,24 @@ const Home = () => {
                 <ProductCard key={product._id} product={product} />
               ))}
           </div> */}
-          <div className= "products">
-            <div className= "container">
-                <h1 className= "lg-title">Our Featured Products</h1>
-                <p className= "text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quos sit consectetur, ipsa voluptatem vitae necessitatibus dicta veniam, optio, possimus assumenda laudantium. Temporibus, quis cum.</p>
+          <div className="products">
+            <div className="container">
+              <h1 className="lg-title">Our Featured Products</h1>
+              <p className="text-light">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Aspernatur quos sit consectetur, ipsa voluptatem vitae
+                necessitatibus dicta veniam, optio, possimus assumenda
+                laudantium. Temporibus, quis cum.
+              </p>
 
-                <div className= "product-items">
-                    {products &&
-                      products.map((product) => (
+              <div className="product-items">
+                {products &&
+                  products.map((product) => (
                     <ProductCard key={product._id} product={product} />
                   ))}
-                </div>
+              </div>
             </div>
-        </div>
+          </div>
         </Fragment>
       )}
     </Fragment>

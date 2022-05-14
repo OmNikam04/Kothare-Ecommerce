@@ -37,9 +37,9 @@ const ProductCard = ({ product }) => {
                    <img src = {product.images[0].url} alt = "product image" />
                </div>
                <div className= "product-btns">
-                   <button type = "button" className= "btn-cart"> add to cart
+                   {/* <button type = "button" className= "btn-cart"> add to cart
                        <span><i className= "fas fa-plus"></i></span>
-                   </button>
+                   </button> */}
                    <button type = "button" className= "btn-buy"> buy now
                        <span><i className= "fas fa-shopping-cart"></i></span>
                    </button>

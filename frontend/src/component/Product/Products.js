@@ -57,7 +57,7 @@ const Products = ({ match }) => {
       dispatch(clearErrors());
     }
 
-    dispatch(getProduct(keyword, currentPage, price,category, ratings));
+    dispatch(getProduct(keyword, currentPage, price, category, ratings));
   }, [dispatch, keyword, currentPage, price, category, ratings, alert, error]);
 
   return (
@@ -68,15 +68,27 @@ const Products = ({ match }) => {
         <Fragment>
           <MetaData title="PRODUCTS -- ECOMMERCE" />
           <h2 className="productsHeading">Products</h2>
-          <h2 className="productsSubHeading">Selected Category: {category? category: "All"}</h2>
+          <h2 className="productsSubHeading">
+            Selected Category: {category ? category : "All"}
+          </h2>
 
-          <div className="products">
+          {/* <div className="products">
             {products &&
               products.map((product) => (
                 <ProductCard key={product._id} product={product} />
               ))}
+          </div> */}
+          <div className="products">
+            <div className="container">
+              <div className="product-items">
+                {products &&
+                  products.map((product) => (
+                    <ProductCard key={product._id} product={product} />
+                  ))}
+              </div>
+            </div>
           </div>
-
+          
           <div className="filterBox">
             <Typography>Price</Typography>
             <Slider
@@ -87,7 +99,6 @@ const Products = ({ match }) => {
               min={0}
               max={25000}
             />
-
 
             <Typography>Categories</Typography>
             <ul className="categoryBox">
