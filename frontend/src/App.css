@@ -1,3 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+:root{
+    --white-light: rgba(255, 255, 255, 0.5);
+    --alice-blue: #f8f9fa;
+    /* --carribean-green: #40c9a2; */
+    --carribean-green: rgb(253, 118, 94);
+    /* --gray: #ededed; */
+    --gray: #ffffff;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    cursor: url("./images/cursor.png"), auto;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* 
 * {
   margin: 0;
   scroll-behavior: smooth;
@@ -6,7 +28,7 @@
 body {
   cursor: url("./images/cursor.png"), auto;
   background-color: #f3f3f3f9;
-}
+} */
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

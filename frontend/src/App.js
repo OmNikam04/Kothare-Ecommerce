@@ -7,7 +7,7 @@ import React from "react";
 import Footer from "./component/layout/Footer/Footer";
 import Navbar from "./component/layout/Header/Navbar";
 
-import Home from "./component/Home/Home";
+import Home from "./component/Home2/Home";
 import ProductDetails from "./component/Product/ProductDetails";
 import Products from "./component/Product/Products";
 import Search from "./component/Product/Search";
