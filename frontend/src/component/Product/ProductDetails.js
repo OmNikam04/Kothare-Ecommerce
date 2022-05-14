@@ -80,12 +80,17 @@ const ProductDetails = ({ match }) => {
 
     setOpen(false);
   };
+  // for discount percent
+  let discountedPrice = product.discountedPrice
+  let actualPrice = product.price
+  
+  let discount = Math.round(100 * (actualPrice - discountedPrice) / actualPrice);
+  // end for discount percent
 
   useEffect(() => {
-    let unmounted = false
+    let unmounted = false;
 
-    if(!unmounted){
-      
+    if (!unmounted) {
       if (error) {
         alert.error(error);
         dispatch(clearErrors());
@@ -104,19 +109,22 @@ const ProductDetails = ({ match }) => {
       dispatch(getProductDetails(match.params.id));
     }
 
-    return ()=>{
-      unmounted = true
-    }
+    return () => {
+      unmounted = true;
+    };
   }, [dispatch, match.params.id, error, alert, reviewError, success]);
 
+
   return (
+    
     <Fragment>
       {loading ? (
         <Loader />
       ) : (
         <Fragment>
           <MetaData title={`${product.name} -- ECOMMERCE`} />
-          <div className="ProductDetails">
+          {/* Start of actual product display */}
+          {/* <div className="ProductDetails">
             <div>
               <Carousel>
                 {product.images &&
@@ -176,7 +184,123 @@ const ProductDetails = ({ match }) => {
                 Submit Review
               </button>
             </div>
+          </div> */}
+          {/* End of actual product display */}
+
+          {/* Start of new Actual product display */}
+          <div className="card-wrapper">
+            <div className="card">
+              {/* <!-- card left --> */}
+              <div className="product-imgs">
+                <div className="img-display">
+                  <div className="img-showcase">
+                    <Carousel>
+                      {product.images &&
+                        product.images.map((item, i) => (
+                          <img
+                            className="CarouselImage"
+                            key={i}
+                            src={item.url}
+                            alt={`${i} Slide`}
+                          />
+                        ))}
+                    </Carousel>
+                  </div>
+                </div>
+              </div>
+              {/* <!-- card right --> */}
+              <div className="product-content">
+                <h2 className="product-title">{product.name}</h2>
+                <p className="product-link">Product # {product._id}</p>
+                <div className="product-rating">
+                  <Rating {...options} />
+                  <span>{product.ratings} ({product.numOfReviews} reviews)</span>
+                </div>
+
+                <div className="product-price">
+                  <p className="last-price">
+                    Old Price: <span>{`₹${product.price}`}</span>
+                  </p>
+                  <p className="new-price">
+                    New Price: <span>{`₹${product.discountedPrice}`} ({discount}%)</span>
+                  </p>
+                </div>
+
+                <div className="product-detail">
+                  <h2>about this item: </h2>
+                  <p>{product.description}</p>
+                  <p>
+                    All products are shipped and packed by our store itself.
+                    We value your time.
+                  </p>
+                  <ul>
+                    <li>
+                      Color: <span>Black</span>
+                    </li>
+                    <li>
+                      Available:{" "}
+                      <span>
+                        <b
+                          className={
+                            product.Stock < 1 ? "redColor" : "greenColor"
+                          }
+                        >
+                          {product.Stock < 1 ? "Out Of Stock" : "In Stock"}
+                        </b>
+                      </span>
+                    </li>
+                    <li>
+                      Category: <span>{product.category}</span>
+                    </li>
+                    <li>
+                      Shipping Area: <span>All across the Nashik</span>
+                    </li>
+                    <li>
+                      Shipping Fee: <span>Free  (only if total price exceeds ₹2000)</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="purchase-info">
+                  <button className="btn" onClick={decreaseQuantity}>-</button>
+                    <input readOnly type="number" value={quantity} />
+                  <button className="btn" onClick={increaseQuantity}>+</button>
+
+                  <button type="button" disabled={product.Stock < 1 ? true : false}
+                    onClick={addToCartHandler} className="btn">
+                    Add to Cart <i className="fas fa-shopping-cart"></i>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={submitReviewToggle}
+                    className="btn"
+                  >
+                    Submit review
+                  </button>
+                </div>
+
+                <div className="social-links">
+                  <p>Share At: </p>
+                  <a href="#">
+                    <i className="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="#">
+                    <i className="fab fa-twitter"></i>
+                  </a>
+                  <a href="#">
+                    <i className="fab fa-instagram"></i>
+                  </a>
+                  <a href="#">
+                    <i className="fab fa-whatsapp"></i>
+                  </a>
+                  <a href="#">
+                    <i className="fab fa-pinterest"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
+          {/* End of new Actual product display */}
 
           <h3 className="reviewsHeading">REVIEWS</h3>
 

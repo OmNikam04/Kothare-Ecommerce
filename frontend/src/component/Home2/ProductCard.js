@@ -2,10 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Rating } from "@material-ui/lab";
 
-// discount Percent = 100 * (original_price - discounted_price) / original_price
 
 
-
+// discountPercent = 100 * (original_price - discounted_price) / original_price
 
 const ProductCard = ({ product }) => {
   const options = {
