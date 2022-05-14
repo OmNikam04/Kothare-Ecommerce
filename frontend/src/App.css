@@ -5,6 +5,7 @@
 
 body {
   cursor: url("./images/cursor.png"), auto;
+  background-color: #f3f3f3f9;
 }
 
 /* Chrome, Safari, Edge, Opera */
