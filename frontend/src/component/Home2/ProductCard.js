@@ -32,9 +32,9 @@ const ProductCard = ({ product }) => {
 
       {/* <!-- single product --> */}
       <div className= "product">
-           <div className= "product-content">
+           <div className= "product-content_home">
                <div className= "product-img">
-                   <img src = {product.images[0].url} alt = "product image" />
+                   <img src = {product.images[0].url} alt="product image" />
                </div>
                <div className= "product-btns">
                    {/* <button type = "button" className= "btn-cart"> add to cart

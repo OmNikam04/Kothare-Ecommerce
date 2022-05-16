@@ -1,3 +1,7 @@
+.productsDiv{
+  height: 100%;
+}
+
 .productsHeading {
   margin: 2vmax auto;
   width: 15vw;
@@ -55,7 +59,7 @@
 }
 .page-link {
   text-decoration: none;
-  font: 300 0.7vmax 'Urbanist', sans-serif;
+  font: 500 1.4vmax 'Urbanist', sans-serif;
   color: rgb(80, 80, 80);
   transition: all 0.3s;
 }
@@ -77,26 +81,31 @@
 }
 
 .filterBox {
-  width: 10vmax;
+  width: max-content;
   position: absolute;
-  top: 10vmax;
-  left: 4vmax;
+  top: 6vmax;
+  height: fit-content;
+  padding: 2rem;
+  background: white;
 }
 
 .categoryBox {
   padding: 0%;
+  cursor: pointer;
 }
 
 .category-link {
   list-style: none;
   color: rgba(0, 0, 0, 0.61);
-  font: 400 0.8vmax 'Urbanist', sans-serif;
+  font: 500 1vmax 'Urbanist', sans-serif;
   margin: 0.4vmax;
   cursor: pointer;
   transition: all 0.5s;
+  padding: 0.3rem;
 }
 .category-link:hover {
   color: tomato;
+  background-color: rgb(212, 212, 212);
 }
 
 .filterBox > fieldset {
@@ -104,9 +113,40 @@
   margin-top: 25px;
 }
 
+.filterBtn{
+  background-color: tomato;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Urbanist'sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 2rem 0;
+  outline: none;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+  
+.filterBtn:hover,
+.filterBtn:focus {
+  opacity: 0.9;
+}
+
 @media screen and (max-width: 600px) {
   .filterBox {
-    width: 20vmax;
+    width: fit-content;
     position: static;
     margin: auto;
   }

@@ -46,6 +46,7 @@ import About from "./component/layout/About/About";
 import NotFound from "./component/layout/Not Found/NotFound";
 
 function App() {
+  console.log(window.location.pathname)
   const { isAuthenticated, user } = useSelector((state) => state.user);
 
   const [stripeApiKey, setStripeApiKey] = useState("");
@@ -57,8 +58,8 @@ function App() {
   }
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-    
+   
+
     WebFont.load({
       google: {
         families: ['Urbanist', "Droid Sans", "Chilanka"],
@@ -71,7 +72,7 @@ function App() {
   }, []);
 
   // window.addEventListener("contextmenu", (e) => e.preventDefault());
-
+  window.scrollTo(0, 0)
   return (
     <Router>
       <Navbar />

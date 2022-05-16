@@ -260,6 +260,7 @@ img{
 .CarouselImage {
   margin:0 auto;
   width: 25vmax;
+  max-height: fit-content;
 }
 /* 
 @media screen and (min-width: 1222px){
