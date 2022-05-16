@@ -5,7 +5,7 @@ import YouTubeIcon from "@material-ui/icons/YouTube";
 import InstagramIcon from "@material-ui/icons/Instagram";
 const About = () => {
   const visitInstagram = () => {
-    window.location = "https://instagram.com/meabhisingh";
+    window.location = "https://instagram.com/kothariluggagemall";
   };
   return (
     <div className="aboutSection">
@@ -18,28 +18,32 @@ const About = () => {
           <div>
             <Avatar
               style={{ width: "10vmax", height: "10vmax", margin: "2vmax 0" }}
-              src="https://res.cloudinary.com/tripleayt/image/upload/v1631555947/products/jpyibarlaxawvcvqjv5b.png"
+              src="https://res.cloudinary.com/kothariofficial/image/upload/v1650952124/11_gnt1yh.png"
               alt="Founder"
             />
-            <Typography>Abhishek Singh</Typography>
+            <Typography>Kothari Luaggage Mall</Typography>
             <Button onClick={visitInstagram} color="primary">
               Visit Instagram
             </Button>
+            <Typography>Kothari Luaggage Mall</Typography>
             <span>
-              This is a sample wesbite made by @meabhisingh. Only with the
-              purpose to teach MERN Stack on the channel 6 Pack Programmer
+              Kothari Luggage Mall is All in One store for all types of Bags. We are first largest showroom of  VIP in Maharashtra
+              This is our second generation business since 1980. Customer trust on our service,
+              with 99% accuracy. We have also launched the products online.. So, that you can buy any product at
+              yhe tip of your finger. 
+              
             </span>
           </div>
           <div className="aboutSectionContainer2">
-            <Typography component="h2">Our Brands</Typography>
+            <Typography component="h2">Connect with us</Typography>
             <a
-              href="https://www.youtube.com/channel/UCO7afj9AUo0zV69pqEYhcjw"
+              href="https://www.youtube.com/channel/"
               target="blank"
             >
               <YouTubeIcon className="youtubeSvgIcon" />
             </a>
 
-            <a href="https://instagram.com/meabhisingh" target="blank">
+            <a href="https://instagram.com/kohtariluggage" target="blank">
               <InstagramIcon className="instagramSvgIcon" />
             </a>
           </div>

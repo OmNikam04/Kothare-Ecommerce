@@ -140,7 +140,7 @@ const ProductDetails = ({ match }) => {
               </div>
               <div className="detailsBlock-3">
                 <s><h1>{`₹${product.price}`}</h1></s>
-                <h1>{`₹${product.discountedPrice}`}</h1>
+                <h1>{`₹${product.price-(product.price*product.discount/100)}`}</h1>
                 <div className="detailsBlock-3-1">
                   <div className="detailsBlock-3-1-1">
                     <button onClick={decreaseQuantity}>-</button>
@@ -161,6 +161,7 @@ const ProductDetails = ({ match }) => {
                     {product.Stock < 1 ? "OutOfStock" : "InStock"}
                   </b>
                 </p>
+                Color : <p>{product.color}</p>
               </div>
 
               <div className="detailsBlock-4">

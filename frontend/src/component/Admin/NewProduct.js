@@ -21,10 +21,11 @@ const NewProduct = ({ history }) => {
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
-    const [discountedPrice, setDiscountedPrice] = useState(0); 
+    const [discount, setDiscount] = useState(0); 
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [Stock, setStock] = useState(0);
+  const [color, setColor] = useState("");
   const [images, setImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
 
@@ -57,10 +58,12 @@ const NewProduct = ({ history }) => {
 
     myForm.set("name", name);
     myForm.set("price", price);
-      myForm.set("discountedPrice", discountedPrice); 
+    myForm.set("discount", discount); 
     myForm.set("description", description);
     myForm.set("category", category);
     myForm.set("Stock", Stock);
+    myForm.set("color", color);
+
 
     images.forEach((image) => {
       myForm.append("images", image);
@@ -125,9 +128,9 @@ const NewProduct = ({ history }) => {
               <AttachMoneyIcon />
               <input
                 type="number"
-                placeholder="discountedPrice"
+                placeholder="Discount"
                 required
-                onChange={(e) => setDiscountedPrice(e.target.value)}
+                onChange={(e) => setDiscount(e.target.value)}
               />
               
             </div>
@@ -142,6 +145,17 @@ const NewProduct = ({ history }) => {
                 cols="30"
                 rows="1"
               ></textarea>
+            </div>
+
+            <div>
+              <SpellcheckIcon />
+              <input
+                type="text"
+                placeholder="Color"
+                required
+                value={color}
+                onChange={(e) => setColor(e.target.value)}
+              />
             </div>
 
             <div>

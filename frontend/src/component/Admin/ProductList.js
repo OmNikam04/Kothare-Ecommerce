@@ -77,11 +77,26 @@ const ProductList = ({ history }) => {
     },
 
     {
+      field: "discount",
+      headerName: "discount",
+      type: "number",
+      minWidth: 250,
+      flex: 0.5,
+    },
+
+    {
       field: "discountedPrice",
       headerName: "discountedPrice",
       type: "number",
       minWidth: 250,
       flex: 0.5,
+    },
+
+    {
+      field: "color",
+      headerName: "Color",
+      minWidth: 50,
+      flex: 0.3,
     },
 
     {
@@ -117,10 +132,12 @@ const ProductList = ({ history }) => {
     products.forEach((item) => {
       rows.push({
         id: item._id,
+        name: item.name,
         stock: item.Stock,
         price: item.price,
-        discountedPrice: item.discountedPrice,
-        name: item.name,
+        discount: item.discount,
+        discountedPrice: item.price-(item.price*item.discount/100),
+        color: item.color,
       });
     });
 

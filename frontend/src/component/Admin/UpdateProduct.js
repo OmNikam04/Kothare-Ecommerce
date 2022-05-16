@@ -30,10 +30,11 @@ const UpdateProduct = ({ history, match }) => {
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
-  const [discountedPrice, setDiscountedPrice] = useState(0);
+  const [discount, setDiscount] = useState(0);
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [Stock, setStock] = useState(0);
+  const [color, setColor] = useState("");
   const [images, setImages] = useState([]);
   const [oldImages, setOldImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
@@ -57,9 +58,10 @@ const UpdateProduct = ({ history, match }) => {
       setName(product.name);
       setDescription(product.description);
       setPrice(product.price);
-      setDiscountedPrice(product.discountedPrice);
+      setDiscount(product.discount);
       setCategory(product.category);
       setStock(product.Stock);
+      setColor(product.color);
       setOldImages(product.images);
     }
     if (error) {
@@ -95,10 +97,11 @@ const UpdateProduct = ({ history, match }) => {
 
     myForm.set("name", name);
     myForm.set("price", price);
-    myForm.set("discountedPrice", discountedPrice);
+    myForm.set("discount", discount);
     myForm.set("description", description);
     myForm.set("category", category);
     myForm.set("Stock", Stock);
+    myForm.set("color", color);
 
     images.forEach((image) => {
       myForm.append("images", image);
@@ -165,10 +168,10 @@ const UpdateProduct = ({ history, match }) => {
               <AttachMoneyIcon />
               <input
                 type="number"
-                placeholder="DiscountedPrice"
+                placeholder="Discount"
                 required
-                onChange={(e) => setDiscountedPrice(e.target.value)}
-                value={discountedPrice}
+                onChange={(e) => setDiscount(e.target.value)}
+                value={discount}
               />
             </div>
 
@@ -207,6 +210,17 @@ const UpdateProduct = ({ history, match }) => {
                 required
                 onChange={(e) => setStock(e.target.value)}
                 value={Stock}
+              />
+            </div>
+
+            <div>
+              <SpellcheckIcon />
+              <input
+                type="text"
+                placeholder="Color"
+                required
+                value={color}
+                onChange={(e) => setColor(e.target.value)}
               />
             </div>
 

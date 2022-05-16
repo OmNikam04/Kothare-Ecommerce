@@ -16,10 +16,14 @@ const productSchema = mongoose.Schema({
     maxLength: [8, "Price cannot exceed 8 characters"],
   },
    
- discountedPrice:{
+ discount:{
   type: Number,
-  required: [true, "Please Enter product discounted Price"],
-  maxLength: [8, "Price cannot exceed 8 characters"],
+  required: [true, "Please Enter product discount"],
+  maxLength: [2, "Price cannot exceed 8 characters"],
+ },
+ color:{
+   type: String,
+   required: false
  },
 
 
