@@ -7,7 +7,6 @@ export const categories = [
     "laptop",
     "School",
     "Picnic"
-    
 ];
 export const brands = [
     ""

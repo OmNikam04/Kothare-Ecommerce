@@ -59,7 +59,7 @@ function App() {
 
   useEffect(() => {
    
-
+    window.scrollTo(0, 0)
     WebFont.load({
       google: {
         families: ['Urbanist', "Droid Sans", "Chilanka"],
@@ -72,7 +72,7 @@ function App() {
   }, []);
 
   // window.addEventListener("contextmenu", (e) => e.preventDefault());
-  window.scrollTo(0, 0)
+  
   return (
     <Router>
       <Navbar />
