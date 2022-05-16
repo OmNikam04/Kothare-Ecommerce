@@ -14,7 +14,7 @@
 
 #myOrdersHeading {
   text-align: center;
-  font: 400 1.2vmax 'Urbanist', sans-serif;
+  font: 400 1.2vmax "Roboto";
   padding: 0.5vmax;
   box-sizing: border-box;
   color: rgb(255, 255, 255);
@@ -23,11 +23,12 @@
 }
 
 .myOrdersTable {
+  overflow: auto;
   background-color: white;
 }
 
 .myOrdersTable div {
-  font: 300 1vmax 'Urbanist', sans-serif;
+  font: 300 1vmax "Roboto";
   color: rgba(0, 0, 0, 0.678);
   border: none;
 }
@@ -48,7 +49,7 @@
 
 .MuiDataGrid-columnHeader div {
   color: rgb(255, 255, 255);
-  font: 500 1.1vmax 'Urbanist', sans-serif !important;
+  font: 500 1.1vmax "Roboto" !important;
 }
 
 .MuiDataGrid-iconSeparator {
@@ -62,12 +63,12 @@
   }
 
   #myOrdersHeading {
-    font: 400 2.2vmax 'Urbanist', sans-serif;
+    font: 400 2.2vmax "Roboto";
     padding: 4vw;
   }
 
   .myOrdersTable div {
-    font: 300 4vw 'Urbanist', sans-serif;
+    font: 300 4vw "Roboto";
   }
 
   .MuiDataGrid-columnHeader {
@@ -75,6 +76,6 @@
   }
 
   .MuiDataGrid-columnHeader div {
-    font: 500 5vw 'Urbanist', sans-serif !important;
+    font: 500 5vw "Roboto" !important;
   }
 }

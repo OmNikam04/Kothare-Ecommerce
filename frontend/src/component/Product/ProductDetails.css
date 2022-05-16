@@ -1,127 +1,4 @@
-.ProductDetails {
-  background-color: rgb(255, 255, 255);
-  width: 100vw;
-  max-width: 100%;
-  padding: 6vmax;
-  box-sizing: border-box;
-  display: flex;
-}
-
-.ProductDetails > div {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 2vmax;
-  box-sizing: border-box;
-  border: 1px solid white;
-}
-
-.ProductDetails > div:last-child {
-  align-items: flex-start;
-}
-
-.CarouselImage {
-  width: 20vmax;
-}
-
-.detailsBlock-1 > h2 {
-  color: rgb(54, 54, 54);
-  font: 600 1.6vmax 'Urbanist', sans-serif;
-}
-
-.detailsBlock-1 > p {
-  color: rgba(54, 54, 54, 0.582);
-  font: 200 0.6vmax 'Urbanist', sans-serif;
-}
-
-.detailsBlock-2 {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  border-top: 1px solid rgba(0, 0, 0, 0.205);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.205);
-  width: 70%;
-  padding: 1vmax 0;
-}
-
-.detailsBlock-2-span {
-  font: 200 0.8vmax 'Urbanist', sans-serif;
-  color: rgba(0, 0, 0, 0.699);
-}
-
-.detailsBlock-3 {
-  width: 70%;
-}
-
-.detailsBlock-3 > h1 {
-  color: rgba(17, 17, 17, 0.795);
-  font: 400 1.8vmax "Franklin Gothic Medium";
-  margin: 1vmax 0;
-}
-.detailsBlock-3-1 {
-  display: flex;
-  align-items: center;
-}
-
-.detailsBlock-3-1-1 > button {
-  border: none;
-  background-color: rgba(0, 0, 0, 0.616);
-  padding: 0.5vmax;
-  cursor: pointer;
-  color: white;
-  transition: all 0.5s;
-}
-.detailsBlock-3-1-1 > button:hover {
-  background-color: rgba(0, 0, 0, 0.767);
-}
-
-.detailsBlock-3-1-1 > input {
-  border: none;
-  padding: 0.5vmax;
-  width: 1vmax;
-  text-align: center;
-  outline: none;
-  font: 400 0.8vmax 'Urbanist', sans-serif;
-  color: rgba(0, 0, 0, 0.74);
-}
-
-.detailsBlock-3-1 > button:last-child {
-  border: none;
-  cursor: pointer;
-  color: white;
-  transition: all 0.5s;
-  background-color: tomato;
-  font: 500 0.7vmax 'Urbanist', sans-serif;
-  border-radius: 20px;
-  padding: 0.5vmax 2vmax;
-  margin: 1vmax;
-  outline: none;
-}
-
-.detailsBlock-3-1 > button:last-child:hover {
-  background-color: rgb(214, 84, 61);
-}
-
-.detailsBlock-3 > p {
-  border-top: 1px solid rgba(0, 0, 0, 0.205);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.205);
-  padding: 1vmax 0;
-  color: rgba(0, 0, 0, 0.651);
-  font: 400 1vmax 'Urbanist', sans-serif;
-  margin: 1vmax 0;
-}
-
-.detailsBlock-4 {
-  color: rgba(0, 0, 0, 0.897);
-  font: 500 1.2vmax sans-serif;
-}
-
-.detailsBlock-4 > p {
-  color: rgba(0, 0, 0, 0.534);
-  font: 300 0.8vmax sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
 
 .submitReview {
   border: none;
@@ -170,7 +47,6 @@
 
 .reviewCard {
   flex: none;
-
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.226);
   border: 1px solid rgba(56, 56, 56, 0.116);
   width: 30vmax;
@@ -185,11 +61,11 @@
 }
 .reviewCard > p {
   color: rgba(0, 0, 0, 0.836);
-  font: 600 0.9vmax 'Urbanist', sans-serif;
+  font: 600 1.2vmax 'Urbanist', sans-serif;
 }
 .reviewCardComment {
   color: rgba(0, 0, 0, 0.445);
-  font: 300 0.8vmax 'Urbanist', sans-serif;
+  font: 500 1vmax 'Urbanist', sans-serif;
 }
 
 .noReviews {
@@ -198,90 +74,235 @@
   color: rgba(0, 0, 0, 0.548);
 }
 
+
+
+/* New Style for actual product display */
+
+.card-wrapper{
+  max-width: 1100px;
+  margin: 0 auto;
+}
+img{
+  width: 100%;
+  display: block;
+}
+.img-display{
+  overflow: hidden;
+}
+.img-showcase{
+  display: flex;
+  width: 100%;
+  transition: all 0.5s ease;
+  margin-left:9rem;
+  height: max-content;
+}
+.img-showcase img{
+  min-width: 100%;
+}
+.img-select{
+  display: flex;
+}
+.img-item{
+  margin: 0.3rem;
+}
+.img-item:nth-child(1),
+.img-item:nth-child(2),
+.img-item:nth-child(3){
+  margin-right: 0;
+}
+.img-item:hover{
+  opacity: 0.8;
+}
+.product-content{
+  padding: 2rem 1rem;
+  height: 100%;
+}
+.product-title{
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: 700;
+  position: relative;
+  color: #12263a;
+  margin: 1px auto;
+}
+.product-title::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 80px;
+  background: #12263a;
+}
+.product-link{
+  letter-spacing: 2.5px;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-weight: 400;
+  font-size: 0.8rem;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  background: #256eff;
+  color: #fff;
+  padding: 0 0.3rem;
+  transition: all 0.5s ease;
+}
+.product-link:hover{
+  opacity: 0.9;
+}
+.product-rating{
+  /* color: #ffc107; */
+}
+.product-rating span{
+  font-weight: 600;
+  /* color: #252525; */
+}
+.product-price{
+  margin: 1rem 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.product-price span{
+  font-weight: 400;
+}
+.last-price span{
+  color: #f64749;
+  text-decoration: line-through;
+}
+.new-price span{
+  color: #256eff;
+}
+.product-detail h2{
+  text-transform: capitalize;
+  color: #12263a;
+  padding-bottom: 0.6rem;
+}
+.product-detail p{
+  font-size: 0.9rem;
+  padding: 0.3rem;
+  opacity: 0.8;
+}
+.product-detail ul{
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+.product-detail ul li{
+  margin: 0;
+  list-style: none;
+  background: url("../../images/checked.png") left center no-repeat;
+  background-size: 18px;
+  padding-left: 1.7rem;
+  margin: 0.4rem 0;
+  font-weight: 600;
+  opacity: 0.9;
+}
+.product-detail ul li span{
+  font-weight: 400;
+}
+.purchase-info{
+  margin: 1.5rem 0;
+}
+.purchase-info input,
+.purchase-info .btn{
+  border: 1.5px solid #ddd;
+  border-radius: 25px;
+  text-align: center;
+  padding: 0.45rem 0.8rem;
+  outline: 0;
+  margin-right: 0.2rem;
+  margin-bottom: 1rem;
+}
+.purchase-info input{
+  width: 60px;
+}
+.purchase-info .btn{
+  cursor: pointer;
+  color: #fff;
+}
+.purchase-info .btn:nth-child(1),
+.purchase-info .btn:nth-child(3){
+  font-weight: 600;
+  background: #212121;
+}
+.purchase-info .btn:nth-child(4){
+  background: #256eff;
+}
+.purchase-info .btn:last-of-type{
+  background: #f64749;
+}
+.purchase-info .btn:hover{
+  opacity: 0.9;
+}
+.social-links{
+  display: flex;
+  align-items: center;
+}
+.social-links a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: #000;
+  border: 1px solid #000;
+  margin: 0 0.2rem;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: all 0.5s ease;
+}
+.social-links a:hover{
+  background: #000;
+  border-color: transparent;
+  color: #fff;
+}
+
+.CarouselImage {
+  margin:0 auto;
+  width: 25vmax;
+  max-height: fit-content;
+}
+/* 
+@media screen and (min-width: 1222px){
+  .reviewsHeading{
+    margin:10rem auto;
+  }
+} */
+
+
+@media screen and (min-width: 992px){
+  /* Actual this media query is for 14 inch laptop screen */
+  .card{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1.5rem;
+  }
+  .card-wrapper{
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .product-imgs{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;      
+  }
+  /* .img-display{
+    border: 2px solid blue;
+  } */
+  .product-content{
+      padding-top: 5rem;
+  }
+  .reviewsHeading{
+    padding-top:5rem;
+  }
+}
+
+
 @media screen and (max-width: 600px) {
   .reviewsHeading{
     font: 600 3vmax 'Urbanist', sans-serif;
-  }
-  .ProductDetails {
-    flex-direction: column;
-    height: unset;
-  }
-
-  .ProductDetails > div:last-child {
-    align-items: center;
-  }
-
-  .detailsBlock-1 > h2 {
-    font-size: 3vmax;
-    text-align: center;
-    font-weight: 900;
-    text-transform: capitalize;
-  }
-
-  .detailsBlock-1 > p {
-    text-align: center;
-    font: 500 1.6vmax 'Urbanist', sans-serif;
-    margin:5px 0;
-    letter-spacing: 2px;
-    width: 100%;
-  }
-
-  .detailsBlock-2 {
-    justify-content: center;
-    width: 100%;
-    font: 400 1.6vmax 'Urbanist', sans-serif;
-  }
-  .detailsBlock-2 > span {
-    
-    font: 500 2.7vmax 'Urbanist', sans-serif;
-  }
-
-  .detailsBlock-3 > h1 {
-    font: 700 3vmax 'Urbanist', sans-serif;
-    text-align: center;
-    text-transform: capitalize;
-  }
-
-  .detailsBlock-3-1 {
-    flex-direction: column;
-  }
-
-  .detailsBlock-3-1-1 {
-    padding: 2vmax 0;
-  }
-  .detailsBlock-3-1-1 > button {
-    padding: 1.2vmax;
-    width: 4vmax;
-    font: 600 2vmax 'Urbanist', sans-serif;
-  }
-
-  .detailsBlock-3-1-1 > input {
-    padding: 1.5vmax;
-    width: 3vmax;
-    font: 600 2vmax 'Urbanist', sans-serif;
-  }
-
-  .detailsBlock-3-1 > button:last-child {
-    font: 600 2.3vmax 'Urbanist', sans-serif;
-    padding: 1.5vmax;
-    width: 20vmax;
-    margin: 3vmax 0;
-  }
-
-  .detailsBlock-3 > p {
-    padding: 2.5vmax 0;
-    text-align: center;
-    font: 600 2vmax 'Urbanist', sans-serif;
-    letter-spacing: 2px;
-  }
-
-  .detailsBlock-4 {
-    padding: 5px;
-    font: 700 3vmax 'Urbanist', sans-serif;
-  }
-
-  .detailsBlock-4 > p {
-    font: 500 2.5vmax 'Urbanist', sans-serif;
   }
 
   .submitReview {
@@ -297,4 +318,14 @@
   .reviewCardComment {
     font: 500 4vw 'Urbanist', sans-serif;
   }
+
+  .img-showcase{
+    width: fit-content;
+    height: 50vh;
+    /* max-height: fit-content; */
+    margin-left: 5.5rem;
+    margin-top: 2rem;
+    /* border: 2px solid red; */
+  }
+
 }

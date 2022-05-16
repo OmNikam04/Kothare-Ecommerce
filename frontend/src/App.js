@@ -7,7 +7,7 @@ import React from "react";
 import Footer from "./component/layout/Footer/Footer";
 import Navbar from "./component/layout/Header/Navbar";
 
-import Home from "./component/Home/Home";
+import Home from "./component/Home2/Home";
 import ProductDetails from "./component/Product/ProductDetails";
 import Products from "./component/Product/Products";
 import Search from "./component/Product/Search";
@@ -46,6 +46,7 @@ import About from "./component/layout/About/About";
 import NotFound from "./component/layout/Not Found/NotFound";
 
 function App() {
+  console.log(window.location.pathname)
   const { isAuthenticated, user } = useSelector((state) => state.user);
 
   const [stripeApiKey, setStripeApiKey] = useState("");
@@ -57,6 +58,8 @@ function App() {
   }
 
   useEffect(() => {
+   
+
     WebFont.load({
       google: {
         families: ['Urbanist', "Droid Sans", "Chilanka"],
@@ -69,7 +72,7 @@ function App() {
   }, []);
 
   // window.addEventListener("contextmenu", (e) => e.preventDefault());
-
+  window.scrollTo(0, 0)
   return (
     <Router>
       <Navbar />
