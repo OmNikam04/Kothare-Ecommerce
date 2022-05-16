@@ -9,15 +9,7 @@ import Slider from "@material-ui/core/Slider";
 import { useAlert } from "react-alert";
 import Typography from "@material-ui/core/Typography";
 import MetaData from "../layout/MetaData";
-
-const categories = [
-  "office",
-  "purse",
-  "school",
-  "kids",
-  "travelling",
-  "laptop",
-];
+import {categories} from '../../data'
 
 const Products = ({ match }) => {
   const dispatch = useDispatch();

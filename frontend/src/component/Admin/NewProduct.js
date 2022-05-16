@@ -12,7 +12,7 @@ import SpellcheckIcon from "@material-ui/icons/Spellcheck";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import SideBar from "./Sidebar";
 import { NEW_PRODUCT_RESET } from "../../constants/productConstants";
-
+import {categories} from '../../data'
 const NewProduct = ({ history }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
@@ -27,15 +27,6 @@ const NewProduct = ({ history }) => {
   const [Stock, setStock] = useState(0);
   const [images, setImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
-
-  const categories = [
-    "office",
-    "purse",
-    "school",
-    "kids",
-    "travelling",
-    "laptop",
-  ];
 
   useEffect(() => {
     if (error) {
