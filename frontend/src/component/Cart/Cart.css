@@ -74,10 +74,10 @@
 .cartInput > input {
   border: none;
   padding: 0.5vmax;
-  width: 1vmax;
+  width: 3vmax;
   text-align: center;
   outline: none;
-  font: 400 1vmax 'Urbanist', sans-serif;
+  font: 450 1.5vmax 'Urbanist', sans-serif;
   color: rgba(0, 0, 0, 0.74);
 }
 
@@ -149,7 +149,7 @@
   }
 
   .cartInput > input {
-    width: 2vmax;
+    width: 5vmax;
     padding: 1.5vmax;
     font: 400 1.8vmax 'Urbanist', sans-serif;
   }

@@ -30,8 +30,8 @@ const Home = () => {
           <MetaData title="Kothari's Lugguage Mall" />
 
           <div className="banner">
-            <p>Welcome to Kothare Luggage Mall</p>
-            <h1>HOME 2</h1>
+            {/* <p>Welcome to Kothare Luggage Mall</p>
+            <h1>HOME 2</h1> */}
 
             <a href="#container">
               <button>
@@ -39,24 +39,15 @@ const Home = () => {
               </button>
             </a>
           </div>
-
-          {/* <h2 className="homeHeading">Featured Products</h2>
-
-          <div className="container" id="container">
-            {products &&
-              products.map((product) => (
-                <ProductCard key={product._id} product={product} />
-              ))}
-          </div> */}
           <div className="products">
-            <div className="container">
+            <div id="container" className="container">
               <h1 className="lg-title">Our Featured Products</h1>
-              <p className="text-light">
+              {/* <p className="text-light">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Aspernatur quos sit consectetur, ipsa voluptatem vitae
                 necessitatibus dicta veniam, optio, possimus assumenda
                 laudantium. Temporibus, quis cum.
-              </p>
+              </p> */}
 
               <div className="product-items">
                 {products &&

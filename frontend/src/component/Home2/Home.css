@@ -1,8 +1,8 @@
 .banner {
-  background-image: url("../../images/cover.jfif");
+  background-image: url("../../images/homeimg1.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size:cover;
   height: 100vmin;
   display: flex;
   flex-direction: column;
@@ -31,14 +31,15 @@
   padding: 1vmax;
   transition: all 0.5s;
   width: 9vmax;
-  font: 500 1vmax 'Urbanist', sans-serif;
+  font: 600 1.5vmax 'Urbanist', sans-serif;
 }
 .banner > a > button:hover {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: #843D08;
   color: white;
+  border: none;
 }
 
-.banner::after {
+/* .banner::after {
   content: "";
   width: 100vw;
   height: 100vmin;
@@ -48,7 +49,7 @@
   left: 0;
   clip-path: polygon(100% 68%, 0 100%, 100% 100%);
   max-width: 100%;
-}
+} */
 
 .productCard{
   text-decoration: none;
@@ -69,7 +70,7 @@ img{
 .lg-title,
 .md-title,
 .sm-title{
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Urbanist', sans-serif;
   padding: 0.6rem 0;
   text-transform: capitalize;
 }
@@ -82,7 +83,7 @@ img{
 }
 .md-title{
   font-size: 2rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Urbanist', sans-serif;
 }
 .sm-title{
   font-weight: 300;
