@@ -13,6 +13,8 @@ import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import SideBar from "./Sidebar";
 import { NEW_PRODUCT_RESET } from "../../constants/productConstants";
 import {categories} from '../../data'
+
+
 const NewProduct = ({ history }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
@@ -21,7 +23,7 @@ const NewProduct = ({ history }) => {
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
-  const [discountedPrice, setDiscountedPrice] = useState(0); 
+  const [discount, setDiscount] = useState(0); 
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [Stock, setStock] = useState(0);
@@ -48,7 +50,7 @@ const NewProduct = ({ history }) => {
 
     myForm.set("name", name);
     myForm.set("price", price);
-      myForm.set("discountedPrice", discountedPrice); 
+      myForm.set("discount", discount); 
     myForm.set("description", description);
     myForm.set("category", category);
     myForm.set("Stock", Stock);
@@ -116,9 +118,11 @@ const NewProduct = ({ history }) => {
               <AttachMoneyIcon />
               <input
                 type="number"
-                placeholder="discountedPrice"
+                placeholder="Discount"
                 required
-                onChange={(e) => setDiscountedPrice(e.target.value)}
+                min="0"
+                max="100"
+                onChange={(e) => setDiscount(e.target.value)}
               />
               
             </div>
