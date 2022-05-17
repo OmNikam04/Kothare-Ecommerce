@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import "./Contact.css";
-import { Button } from "@material-ui/core";
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_ii6uuxm', 'template_g165c0m', form.current, 'JWxhGHuotOWjKj3DX')
+      .then((result) => {
+          console.log(result.text);
+          alert("message sent")
+          e.target.reset()
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
   return (
     <>
     <div className= "contact-section">
@@ -43,18 +57,18 @@ const Contact = () => {
         </div>
 
         <div className= "contact-form">
-          {/* <form>
+          <form ref={form} onSubmit={sendEmail}>
             <div>
-              <input type = "text" className= "form-control" placeholder="First Name">
-              <input type = "text" className= "form-control" placeholder="Last Name">
+              <input type = "text" name="user_name" className= "form-control" placeholder="First Name"/>
+              {/* <input type = "text" className= "form-control" placeholder="Last Name"/> */}
             </div>
             <div>
-              <input type = "email" className= "form-control" placeholder="E-mail">
-              <input type = "text" className= "form-control" placeholder="Phone">
+              <input type = "email" name="user_email" className= "form-control" placeholder="E-mail"/>
+              {/* <input type = "text" className= "form-control" placeholder="Phone"/> */}
             </div>
-            <textarea rows = "5" placeholder="Message" className= "form-control"></textarea>
-            <input type = "submit" className= "send-btn" value = "send message">
-          </form> */}
+            <textarea rows = "5" name="message" placeholder="Message" className= "form-control"></textarea>
+            <input type = "submit" className= "send-btn" value = "send"/>
+          </form>
 
           <div>
             <img src = "image/contact-png.png" alt = ""/>
