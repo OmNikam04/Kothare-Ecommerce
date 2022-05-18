@@ -20,7 +20,7 @@ const ProductCard = ({ product }) => {
         </span>
       </div>
       <s><span>{`₹${product.price}`}</span></s>
-      <span>{`₹${product.discountedPrice}`}</span>
+      <span>{`₹${product.price-(product.price*product.discount/100)}`}</span>
     </Link>
   );
 };

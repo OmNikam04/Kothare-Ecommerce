@@ -14,10 +14,10 @@ const ProductCard = ({ product }) => {
     readOnly: true,
     precision: 0.5,
   };
-  let discountedPrice = product.discountedPrice
+  /*let discountedPrice = product.discountedPrice
   let actualPrice = product.price
 
-  let discount = Math.round(100 * (actualPrice - discountedPrice) / actualPrice);
+  let discount = Math.round(100 * (actualPrice - discountedPrice) / actualPrice);*/
   return (
     <Link className="productCard" to={`/product/${product._id}`}>
       {/* <img src={product.images[0].url} alt={product.name} />
@@ -57,11 +57,11 @@ const ProductCard = ({ product }) => {
                </div>
                <a href = "#" className= "product-name">{prodName.length > MAX_PRODUCT_NAME_LENGTH ?`${prodName.substring(0, MAX_PRODUCT_NAME_LENGTH)}...`: prodName}</a>
                <p className= "product-price">{`₹${product.price}`}</p>
-               <p className= "product-price">{`₹${product.discountedPrice}`}</p>
+               <p className= "product-price">{`₹${product.price-(product.price*product.discount/100)}`}</p>
            </div>
 
            <div className= "off-info">
-               <h2 className= "sm-title">{`${discount}% off`}</h2>
+               <h2 className= "sm-title">{`${product.discount}% off`}</h2>
            </div>
        </div>
        {/* <!-- end of single product --> */}

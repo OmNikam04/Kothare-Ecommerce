@@ -77,6 +77,14 @@ const ProductList = ({ history }) => {
     },
 
     {
+      field: "discount",
+      headerName: "discount (%)",
+      type: "number",
+      minWidth: 250,
+      flex: 0.5,
+    },
+
+    {
       field: "discountedPrice",
       headerName: "discountedPrice",
       type: "number",
@@ -119,7 +127,8 @@ const ProductList = ({ history }) => {
         id: item._id,
         stock: item.Stock,
         price: item.price,
-        discountedPrice: item.discountedPrice,
+        discount: item.discount,
+        discountedPrice: item.price-(item.price*item.discount/100),
         name: item.name,
       });
     });

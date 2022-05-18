@@ -136,7 +136,7 @@ const Header = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>kothare</Logo>
+          <Logo>kothari</Logo>
         </Center>
         <Right>
           {isAuthenticated ? (

@@ -83,14 +83,14 @@ const ProductDetails = ({ match }) => {
 
     setOpen(false);
   };
-  // for discount percent
+  /*// for discount percent
   let discountedPrice = product.discountedPrice;
   let actualPrice = product.price;
 
   let discount = Math.round(
     (100 * (actualPrice - discountedPrice)) / actualPrice
   );
-  // end for discount percent
+  // end for discount percent */
 
   useEffect(() => {
     let unmounted = false;
@@ -165,7 +165,7 @@ const ProductDetails = ({ match }) => {
                   <p className="new-price">
                     New Price:{" "}
                     <span>
-                      {`₹${product.discountedPrice}`} ({discount}%)
+                      {`₹${product.price-(product.price*product.discount/100)}`} ({product.discount}%)
                     </span>
                   </p>
                 </div>
