@@ -9,9 +9,11 @@ import Slider from "@material-ui/core/Slider";
 import { useAlert } from "react-alert";
 import Typography from "@material-ui/core/Typography";
 import MetaData from "../layout/MetaData";
+import { useHistory } from "react-router-dom";
 import {categories} from '../../data'
 
 const Products = ({ match }) => {
+  const history = useHistory();
   const dispatch = useDispatch();
 
   const alert = useAlert();
@@ -38,8 +40,8 @@ const Products = ({ match }) => {
     setCurrentPage(e);
   };
 
-  const priceHandler = async (event, newPrice) => {
-    await setPrice(newPrice);
+  const priceHandler = (event, value) => {
+    setPrice(value);
   };
   let count = filteredProductsCount;
 
@@ -57,6 +59,13 @@ const Products = ({ match }) => {
     window.scrollTo(0, 0);
     dispatch(getProduct(keyword, currentPage, price, category, ratings));
   }, [dispatch, keyword, currentPage, category, price, ratings]);
+
+  const removeFilter = ()=>{
+    setPrice([0, 25000])
+    setCategory("")
+    setRatings(0)
+    history.push('/products')
+  }
 
   return (
     <Fragment>
@@ -129,6 +138,9 @@ const Products = ({ match }) => {
 
               <button className="filterBtn" onClick={fetchRequest}>
                 Apply Filter
+              </button>
+              <button className="removeFilterBtn" onClick={removeFilter}>
+                Remove Filter
               </button>
             </div>
             {resultPerPage < count && (
