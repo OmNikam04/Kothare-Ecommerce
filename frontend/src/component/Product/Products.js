@@ -38,8 +38,8 @@ const Products = ({ match }) => {
     setCurrentPage(e);
   };
 
-  const priceHandler = (event, newPrice) => {
-    setPrice(newPrice);
+  const priceHandler = async (event, newPrice) => {
+    await setPrice(newPrice);
   };
   let count = filteredProductsCount;
 

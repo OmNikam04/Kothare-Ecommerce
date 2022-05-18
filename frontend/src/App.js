@@ -1,6 +1,6 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-import Header from "./component/layout/Header/Header.js";
+import Header from "./component/layout/Header/Header";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import WebFont from "webfontloader";
 import React from "react";
@@ -75,9 +75,9 @@ function App() {
   
   return (
     <Router>
-      <Navbar />
+      <Header />
 
-      {isAuthenticated && <UserOptions user={user} />}
+      {/* {isAuthenticated && <UserOptions user={user} />} */}
 
       {stripeApiKey && (
         <Elements stripe={loadStripe(stripeApiKey)}>
@@ -190,8 +190,7 @@ function App() {
           }
         />
       </Switch>
-
-      <Footer />
+       <Footer /> 
     </Router>
   );
 }

@@ -7,6 +7,8 @@ import { Rating } from "@material-ui/lab";
 // discountPercent = 100 * (original_price - discounted_price) / original_price
 
 const ProductCard = ({ product }) => {
+  const MAX_PRODUCT_NAME_LENGTH = 20;
+  const prodName = product.name
   const options = {
     value: product.ratings,
     readOnly: true,
@@ -53,7 +55,7 @@ const ProductCard = ({ product }) => {
                     <Rating className="stars" {...options} />{" "}
                    </div>
                </div>
-               <a href = "#" className= "product-name">{product.name}</a>
+               <a href = "#" className= "product-name">{prodName.length > MAX_PRODUCT_NAME_LENGTH ?`${prodName.substring(0, MAX_PRODUCT_NAME_LENGTH)}...`: prodName}</a>
                <p className= "product-price">{`₹${product.price}`}</p>
                <p className= "product-price">{`₹${product.discountedPrice}`}</p>
            </div>

@@ -179,7 +179,7 @@ const ProductDetails = ({ match }) => {
                   </p>
                   <ul>
                     <li>
-                      Color: <span>Black</span>
+                      Color: <span>{product.color}</span>
                     </li>
                     <li>
                       Available:{" "}
@@ -228,7 +228,7 @@ const ProductDetails = ({ match }) => {
                   </button>
                 </div>
 
-                <div className="social-links">
+                <div className="social-links_productsDetails">
                   <p>Share At: </p>
                   <a href="#">
                     <i className="fab fa-facebook-f"></i>

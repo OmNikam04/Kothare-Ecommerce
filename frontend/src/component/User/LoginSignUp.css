@@ -162,6 +162,7 @@
 @media screen and (max-width: 600px) {
   .LoginSignUpContainer {
     background-color: white;
+    margin-top:50px;
   }
   .LoginSignUpBox {
     width: 100vw;

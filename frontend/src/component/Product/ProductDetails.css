@@ -233,11 +233,11 @@ img{
 .purchase-info .btn:hover{
   opacity: 0.9;
 }
-.social-links{
+.social-links_productsDetails{
   display: flex;
   align-items: center;
 }
-.social-links a{
+.social-links_productsDetails a{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -251,7 +251,7 @@ img{
   font-size: 0.8rem;
   transition: all 0.5s ease;
 }
-.social-links a:hover{
+.social-links_productsDetails a:hover{
   background: #000;
   border-color: transparent;
   color: #fff;
