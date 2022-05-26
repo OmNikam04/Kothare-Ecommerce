@@ -13,6 +13,8 @@ import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import SideBar from "./Sidebar";
 import { NEW_PRODUCT_RESET } from "../../constants/productConstants";
 import {categories} from '../../data'
+
+
 const NewProduct = ({ history }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
@@ -117,8 +119,10 @@ const NewProduct = ({ history }) => {
               <AttachMoneyIcon />
               <input
                 type="number"
-                placeholder="discount"
+                placeholder="Discount"
                 required
+                min="0"
+                max="100"
                 onChange={(e) => setDiscount(e.target.value)}
               />
               
