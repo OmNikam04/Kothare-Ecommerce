@@ -11,7 +11,7 @@ const ConfirmOrder = ({ history }) => {
   const { user } = useSelector((state) => state.user);
 
   const subtotal = cartItems.reduce(
-    (acc, item) => acc + item.quantity * item.discountedPrice,
+    (acc, item) => acc + item.quantity * (item.price-(item.price*item.discount/100)),
     0
   );
 
@@ -85,8 +85,8 @@ const ConfirmOrder = ({ history }) => {
                       {item.name}
                     </Link>{" "}
                     <span>
-                      {item.quantity} X ₹{item.discountedPrice} ={" "}
-                      <b>₹{item.discountedPrice * item.quantity}</b>
+                      {item.quantity} X ₹{item.price-(item.price*item.discount/100)} ={" "}
+                      <b>₹{(item.price-(item.price*item.discount/100)) * item.quantity}</b>
                     </span>
                   </div>
                 ))}

@@ -5,11 +5,12 @@
   box-sizing: border-box;
   background-color: rgb(235, 235, 235);
   position: fixed;
-  top: 0;
+  top: 60px;
   left: 0;
   height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow:scroll;
 }
 
 #myOrdersHeading {
@@ -28,7 +29,7 @@
 }
 
 .myOrdersTable div {
-  font: 300 1vmax "Roboto";
+  font: 500 1vmax "Roboto";
   color: rgba(0, 0, 0, 0.678);
   border: none;
 }

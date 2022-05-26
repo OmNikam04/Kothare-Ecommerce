@@ -9,9 +9,11 @@ import Slider from "@material-ui/core/Slider";
 import { useAlert } from "react-alert";
 import Typography from "@material-ui/core/Typography";
 import MetaData from "../layout/MetaData";
+import { useHistory } from "react-router-dom";
 import {categories} from '../../data'
 
 const Products = ({ match }) => {
+  const history = useHistory();
   const dispatch = useDispatch();
 
   const alert = useAlert();
@@ -38,8 +40,8 @@ const Products = ({ match }) => {
     setCurrentPage(e);
   };
 
-  const priceHandler = (event, newPrice) => {
-    setPrice(newPrice);
+  const priceHandler = (event, value) => {
+    setPrice(value);
   };
   let count = filteredProductsCount;
 
@@ -58,6 +60,13 @@ const Products = ({ match }) => {
     dispatch(getProduct(keyword, currentPage, price, category, ratings));
   }, [dispatch, keyword, currentPage, category, price, ratings]);
 
+  const removeFilter = ()=>{
+    setPrice([0, 25000])
+    setCategory("")
+    setRatings(0)
+    history.push('/products')
+  }
+
   return (
     <Fragment>
       {loading ? (
@@ -70,13 +79,6 @@ const Products = ({ match }) => {
             <h2 className="productsSubHeading">
               Selected Category: {category ? category : "All"}
             </h2>
-
-            {/* <div className="products">
-            {products &&
-              products.map((product) => (
-                <ProductCard key={product._id} product={product} />
-              ))}
-          </div> */}
             <div className="products">
               <div className="container">
                 <div className="product-items">
@@ -127,9 +129,14 @@ const Products = ({ match }) => {
                 />
               </fieldset>
 
-              <button className="filterBtn" onClick={fetchRequest}>
-                Apply Filter
-              </button>
+              <div className="filterBtns">
+                <button className="filterBtn" onClick={fetchRequest}>
+                  Apply Filter
+                </button>
+                <button className="removeFilterBtn" onClick={removeFilter}>
+                  Remove Filter
+                </button>
+              </div>
             </div>
             {resultPerPage < count && (
               <div className="paginationBox">
