@@ -63,7 +63,7 @@ const UserOptions = ({ user }) => {
 
   return (
     <Fragment>
-      <Backdrop open={open} style={{ zIndex: "10" }} />
+      <Backdrop injectfirst="true" open={open} style={{ zIndex: "10" }} />
       <SpeedDial
         ariaLabel="SpeedDial tooltip example"
         onClose={() => setOpen(false)}
@@ -75,7 +75,7 @@ const UserOptions = ({ user }) => {
         icon={
           <img
             className="speedDialIcon"
-            src={user.avatar.url ? user.avatar.url : "/Profile.png"}
+            src={user.avatar.url ? user.avatar.url : "/profilePic.png"}
             alt="Profile"
           />
         }

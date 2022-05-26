@@ -47,6 +47,9 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.pre("save", async function (next) {
+  // we are using function keywrod to create fuction as we can't user this keyword in arrow function
+
+    // todo: we can't hash password after user updating the userDetails as it will hashed twice
   if (!this.isModified("password")) {
     next();
   }
@@ -70,7 +73,7 @@ userSchema.methods.comparePassword = async function (password) {
 // Generating Password Reset Token
 userSchema.methods.getResetPasswordToken = function () {
   // Generating Token
-  const resetToken = crypto.randomBytes(20).toString("hex");
+  const resetToken = crypto.randomBytes(20).toString("hex");// token will be generated of 20 random bytes
 
   // Hashing and adding resetPasswordToken to userSchema
   this.resetPasswordToken = crypto

@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import "./Contact.css";
-import { Button } from "@material-ui/core";
 
 const Contact = () => {
+  const form = useRef();
+  
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_ii6uuxm', 'template_g165c0m', form.current, 'JWxhGHuotOWjKj3DX')
+      .then((result) => {
+          console.log(result.text);
+          alert("message sent")
+          e.target.reset()
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
   return (
     <>
     <div className= "contact-section">
@@ -43,27 +57,25 @@ const Contact = () => {
         </div>
 
         <div className= "contact-form">
-          {/* <form>
+          <form ref={form} onSubmit={sendEmail}>
+            <h3>Bulk order Enquiry? </h3>
+            <p>send us a mail...</p>
             <div>
-              <input type = "text" className= "form-control" placeholder="First Name">
-              <input type = "text" className= "form-control" placeholder="Last Name">
+              <input type = "text" name="user_name" className= "form-control" placeholder="First Name"/>
+              {/* <input type = "text" className= "form-control" placeholder="Last Name"/> */}
             </div>
             <div>
-              <input type = "email" className= "form-control" placeholder="E-mail">
-              <input type = "text" className= "form-control" placeholder="Phone">
+              <input type = "email" name="user_email" className= "form-control" placeholder="E-mail"/>
+              {/* <input type = "text" className= "form-control" placeholder="Phone"/> */}
             </div>
-            <textarea rows = "5" placeholder="Message" className= "form-control"></textarea>
-            <input type = "submit" className= "send-btn" value = "send message">
-          </form> */}
-
-          <div>
-            <img src = "image/contact-png.png" alt = ""/>
-          </div>
+            <textarea rows = "5" name="message" placeholder="Message" className= "form-control"></textarea>
+            <input type = "submit" className= "send-btn" value = "send"/>
+          </form>
         </div>
       </div>
 
       <div className= "map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14996.509551363275!2d73.7641905289727!3d20.003167535003367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeba0c0c0f9b5%3A0x4d710a1f911026d0!2sKothari%20Bags%20Store!5e0!3m2!1sen!2sin!4v1651952445658!5m2!1sen!2sin" width="100%" height="600" frameborder="0" style={{border:0, allowfullscreen:"" ,ariaHidden:"false" ,tabindex:"0"}} ></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14996.509551363275!2d73.7641905289727!3d20.003167535003367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeba0c0c0f9b5%3A0x4d710a1f911026d0!2sKothari%20Bags%20Store!5e0!3m2!1sen!2sin!4v1651952445658!5m2!1sen!2sin" width="100%" height="600" frameBorder="0" style={{border:0, allowfullscreen:"" ,ariaHidden:"false" ,tabindex:"0"}} ></iframe>
       </div>
     </div>
     </>

@@ -1,11 +1,34 @@
 .speedDial {
   position: fixed;
-  right: 3vmax;
-  top: 3vmax;
+  right: 0;
+  top: 8px;
 }
 
+.MuiFab-primary{
+  color:transparent !important;
+  background-color: transparent !important;
+}
+.MuiFab-root {
+  width: 40px !important;
+  height: 40px !important;
+}
 .speedDialIcon {
-  width: 56px;
-  height: 56px;
+  width: 40px;
+  height: 40px;
   border-radius: 100%;
+}
+
+.input-submit_header{
+  display:none;
+}
+@media screen and (max-width: 600px){
+  .searchContainer_header{
+    display:flex;
+    width: 100%;
+  }
+.form_header{
+  /* border:2px solid red; */
+  width: auto;
+  display:flex;
+}
 }

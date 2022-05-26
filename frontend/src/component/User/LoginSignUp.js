@@ -60,6 +60,9 @@ const LoginSignUp = ({ history, location }) => {
         if (reader.readyState === 2) {
           setAvatarPreview(reader.result);
           setAvatar(reader.result);
+        }else{
+          setAvatarPreview("/profilePic.png");
+          setAvatar("/profilePic.png");
         }
       };
 

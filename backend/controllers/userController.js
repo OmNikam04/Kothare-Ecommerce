@@ -8,13 +8,6 @@ const cloudinary = require("cloudinary");
 
 // Register a User
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
-
-  // const data = req.body.avatar;
-  // const base64data = Buffer.from(data, 'base64').toString()
-  // const decodedAvatar = Buffer.from(encodedAvatar, "base64"); 
-  // let buff = new Buffer(data);
-  // let base64data = buff.toString('base64');
-
   const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
     folder: "avatars",
     width: 150,
@@ -22,6 +15,7 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
   });
 
   const { name, email, password } = req.body;
+  console.log(req.body.avatar)
 
   const user = await User.create({
     name,
@@ -38,6 +32,7 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
 
 // Login User
 exports.loginUser = catchAsyncErrors(async (req, res, next) => {
+  
   const { email, password } = req.body;
 
   // checking if user has given password and email both

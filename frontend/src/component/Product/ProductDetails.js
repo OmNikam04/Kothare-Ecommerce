@@ -29,7 +29,8 @@ const ProductDetails = ({ match }) => {
   const { product, loading, error } = useSelector(
     (state) => state.productDetails
   );
-
+  const MAX_PRODUCT_NAME_LENGTH = 28;
+  const prodName = product.name
   
   const { success, error: reviewError } = useSelector(
     (state) => state.newReview
@@ -83,14 +84,14 @@ const ProductDetails = ({ match }) => {
 
     setOpen(false);
   };
-  // for discount percent
+  /*// for discount percent
   let discountedPrice = product.discountedPrice;
   let actualPrice = product.price;
 
   let discount = Math.round(
     (100 * (actualPrice - discountedPrice)) / actualPrice
   );
-  // end for discount percent
+  // end for discount percent */
 
   useEffect(() => {
     let unmounted = false;
@@ -149,7 +150,8 @@ const ProductDetails = ({ match }) => {
               </div>
               {/* <!-- card right --> */}
               <div className="product-content">
-                <h2 className="product-title">{product.name}</h2>
+                {/* <h2 className="product-title">{product.name}</h2> */}
+                <h2 className="product-title">{prodName?.length > MAX_PRODUCT_NAME_LENGTH ?`${prodName.substring(0, MAX_PRODUCT_NAME_LENGTH)}...`: prodName}</h2>
                 <p className="product-link">Product # {product._id}</p>
                 <div className="product-rating">
                   <Rating {...options} />
@@ -165,7 +167,7 @@ const ProductDetails = ({ match }) => {
                   <p className="new-price">
                     New Price:{" "}
                     <span>
-                      {`₹${product.discountedPrice}`} ({discount}%)
+                      {`₹${product.price-(product.price*product.discount/100)}`} ({product.discount}%)
                     </span>
                   </p>
                 </div>
@@ -179,7 +181,7 @@ const ProductDetails = ({ match }) => {
                   </p>
                   <ul>
                     <li>
-                      Color: <span>Black</span>
+                      Color: <span>{product.color}</span>
                     </li>
                     <li>
                       Available:{" "}
@@ -201,7 +203,7 @@ const ProductDetails = ({ match }) => {
                     </li>
                     <li>
                       Shipping Fee:{" "}
-                      <span>Free (only if total price exceeds ₹2000)</span>
+                      <span>Free (only if product price exceeds ₹1000)</span>
                     </li>
                   </ul>
                 </div>
@@ -228,7 +230,7 @@ const ProductDetails = ({ match }) => {
                   </button>
                 </div>
 
-                <div className="social-links">
+                <div className="social-links_productsDetails">
                   <p>Share At: </p>
                   <a href="#">
                     <i className="fab fa-facebook-f"></i>
