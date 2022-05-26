@@ -55,7 +55,7 @@ const ProductCard = ({ product }) => {
                     <Rating className="stars" {...options} />{" "}
                    </div>
                </div>
-               <a href = "#" className= "product-name">{prodName.length > MAX_PRODUCT_NAME_LENGTH ?`${prodName.substring(0, MAX_PRODUCT_NAME_LENGTH)}...`: prodName}</a>
+               <h6 className= "product-name">{prodName.length > MAX_PRODUCT_NAME_LENGTH ?`${prodName.substring(0, MAX_PRODUCT_NAME_LENGTH)}...`: prodName}</h6>
                <p className= "product-price">{`₹${product.price}`}</p>
                <p className= "product-price">{`₹${product.price-(product.price*product.discount/100)}`}</p>
            </div>

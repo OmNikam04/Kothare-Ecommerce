@@ -63,7 +63,7 @@ const UserOptions = ({ user }) => {
 
   return (
     <Fragment>
-      <Backdrop injectFirst open={open} style={{ zIndex: "10" }} />
+      <Backdrop injectfirst="true" open={open} style={{ zIndex: "10" }} />
       <SpeedDial
         ariaLabel="SpeedDial tooltip example"
         onClose={() => setOpen(false)}

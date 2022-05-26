@@ -24,7 +24,7 @@
 }
 .login_signUp_toggle > p {
   color: rgba(0, 0, 0, 0.678);
-  font: 500 1.6vmax 'Urbanist', sans-serif;
+  font: 500 1vmax 'Urbanist', sans-serif;
   transition: all 0.5s;
   cursor: pointer;
   display: grid;
@@ -73,8 +73,12 @@
   box-sizing: border-box;
   border: 1px solid rgba(0, 0, 0, 0.267);
   border-radius: 4px;
-  font: 300 0.9vmax 'Urbanist', sans-serif;
+  font: 500 1.3vmax 'Urbanist', sans-serif;
   outline: none;
+}
+.loginForm > div > input[type='password'],
+.signUpForm > div > input[type='password']{
+  font: 500 1.5vmax 'Urbanist', sans-serif;
 }
 
 .loginForm > div > svg,
@@ -90,7 +94,7 @@
   text-decoration: none;
   align-self: flex-end;
   transition: all 0.5s;
-  font: 500 0.8vmax "Gill Sans";
+  font: 500 1vmax 'Urbanist', sans-serif;;
 }
 
 .loginForm > a:hover {

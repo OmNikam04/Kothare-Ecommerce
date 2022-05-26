@@ -9,6 +9,7 @@ import UserOptions from "./UserOptions";
 import { useHistory } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { logout } from "../../../actions/userAction";
+import {Link} from 'react-router-dom'
 
 const Container = styled.div`
   position: sticky;
@@ -136,7 +137,9 @@ const Header = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>kothari</Logo>
+          <Link to='/' style={{textDecoration:"none"}}>
+            <Logo>kothari</Logo>
+          </Link>
         </Center>
         <Right>
           {isAuthenticated ? (

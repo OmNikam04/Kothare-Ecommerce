@@ -79,13 +79,6 @@ const Products = ({ match }) => {
             <h2 className="productsSubHeading">
               Selected Category: {category ? category : "All"}
             </h2>
-
-            {/* <div className="products">
-            {products &&
-              products.map((product) => (
-                <ProductCard key={product._id} product={product} />
-              ))}
-          </div> */}
             <div className="products">
               <div className="container">
                 <div className="product-items">
@@ -136,12 +129,14 @@ const Products = ({ match }) => {
                 />
               </fieldset>
 
-              <button className="filterBtn" onClick={fetchRequest}>
-                Apply Filter
-              </button>
-              <button className="removeFilterBtn" onClick={removeFilter}>
-                Remove Filter
-              </button>
+              <div className="filterBtns">
+                <button className="filterBtn" onClick={fetchRequest}>
+                  Apply Filter
+                </button>
+                <button className="removeFilterBtn" onClick={removeFilter}>
+                  Remove Filter
+                </button>
+              </div>
             </div>
             {resultPerPage < count && (
               <div className="paginationBox">

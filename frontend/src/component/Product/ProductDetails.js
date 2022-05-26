@@ -29,7 +29,8 @@ const ProductDetails = ({ match }) => {
   const { product, loading, error } = useSelector(
     (state) => state.productDetails
   );
-
+  const MAX_PRODUCT_NAME_LENGTH = 28;
+  const prodName = product.name
   
   const { success, error: reviewError } = useSelector(
     (state) => state.newReview
@@ -149,7 +150,8 @@ const ProductDetails = ({ match }) => {
               </div>
               {/* <!-- card right --> */}
               <div className="product-content">
-                <h2 className="product-title">{product.name}</h2>
+                {/* <h2 className="product-title">{product.name}</h2> */}
+                <h2 className="product-title">{prodName?.length > MAX_PRODUCT_NAME_LENGTH ?`${prodName.substring(0, MAX_PRODUCT_NAME_LENGTH)}...`: prodName}</h2>
                 <p className="product-link">Product # {product._id}</p>
                 <div className="product-rating">
                   <Rating {...options} />
@@ -201,7 +203,7 @@ const ProductDetails = ({ match }) => {
                     </li>
                     <li>
                       Shipping Fee:{" "}
-                      <span>Free (only if total price exceeds ₹2000)</span>
+                      <span>Free (only if product price exceeds ₹1000)</span>
                     </li>
                   </ul>
                 </div>

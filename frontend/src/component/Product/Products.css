@@ -81,7 +81,8 @@
 }
 
 .filterBox {
-  width: max-content;
+  /* border:2px solid red; */
+  width: fit-content;
   position: absolute;
   top: 6vmax;
   height: fit-content;
@@ -113,7 +114,17 @@
   margin-top: 25px;
 }
 
-.filterBtn{
+.filterBtns{
+  display: flex;
+  flex-direction: column;
+}
+
+.filterBtns:last-child{
+  margin-top: 5px;
+}
+
+.filterBtn,
+.removeFilterBtn{
   background-color: tomato;
   border-radius: 8px;
   border-style: none;
