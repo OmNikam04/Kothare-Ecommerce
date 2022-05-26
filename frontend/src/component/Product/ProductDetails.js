@@ -84,16 +84,9 @@ const ProductDetails = ({ match }) => {
 
     setOpen(false);
   };
-  /*// for discount percent
-  let discountedPrice = product.discountedPrice;
-  let actualPrice = product.price;
-
-  let discount = Math.round(
-    (100 * (actualPrice - discountedPrice)) / actualPrice
-  );
-  // end for discount percent */
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     let unmounted = false;
 
     if (!unmounted) {

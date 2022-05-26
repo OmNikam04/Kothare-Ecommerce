@@ -2,6 +2,7 @@ import React, { Fragment, useEffect } from "react";
 import { CgMouse } from "react-icons/all";
 import "./Home.css";
 import ProductCard from "./ProductCard.js";
+import Contact from "../layout/Contact/Contact"
 import MetaData from "../layout/MetaData";
 import { clearErrors, getProduct } from "../../actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
@@ -30,9 +31,6 @@ const Home = () => {
           <MetaData title="Kothari's Lugguage Mall" />
 
           <div className="banner">
-            {/* <p>Welcome to Kothare Luggage Mall</p>
-            <h1>HOME 2</h1> */}
-
             <a href="#container">
               <button>
                 Scroll <CgMouse />
@@ -42,13 +40,6 @@ const Home = () => {
           <div className="products">
             <div id="container" className="container">
               <h1 className="lg-title">Our Featured Products</h1>
-              {/* <p className="text-light">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Aspernatur quos sit consectetur, ipsa voluptatem vitae
-                necessitatibus dicta veniam, optio, possimus assumenda
-                laudantium. Temporibus, quis cum.
-              </p> */}
-
               <div className="product-items">
                 {products &&
                   products.map((product) => (
@@ -57,6 +48,7 @@ const Home = () => {
               </div>
             </div>
           </div>
+          <Contact/>
         </Fragment>
       )}
     </Fragment>

@@ -5,8 +5,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import WebFont from "webfontloader";
 import React from "react";
 import Footer from "./component/layout/Footer/Footer";
-import Navbar from "./component/layout/Header/Navbar";
-
 import Home from "./component/Home2/Home";
 import ProductDetails from "./component/Product/ProductDetails";
 import Products from "./component/Product/Products";
@@ -14,8 +12,6 @@ import Search from "./component/Product/Search";
 import LoginSignUp from "./component/User/LoginSignUp";
 import store from "./store";
 import { loadUser } from "./actions/userAction";
-import UserOptions from "./component/layout/Header/UserOptions";
-import { useSelector } from "react-redux";
 import Profile from "./component/User/Profile";
 import ProtectedRoute from "./component/Route/ProtectedRoute";
 import UpdateProfile from "./component/User/UpdateProfile";
@@ -46,9 +42,6 @@ import About from "./component/layout/About/About";
 import NotFound from "./component/layout/Not Found/NotFound";
 
 function App() {
-  console.log(window.location.pathname)
-  const { isAuthenticated, user } = useSelector((state) => state.user);
-
   const [stripeApiKey, setStripeApiKey] = useState("");
 
   async function getStripeApiKey() {
@@ -76,8 +69,6 @@ function App() {
   return (
     <Router>
       <Header />
-
-      {/* {isAuthenticated && <UserOptions user={user} />} */}
 
       {stripeApiKey && (
         <Elements stripe={loadStripe(stripeApiKey)}>

@@ -32,7 +32,7 @@
 }
 
 .aboutSectionContainer > h1 {
-  font: 400 3vmax 'Urbanist', sans-serif;
+  font: 500 3.5vmax 'Urbanist', sans-serif;
   color: tomato;
   margin: 2vmax;
 }
@@ -53,7 +53,7 @@
 
 .aboutSectionContainer > div > div > p {
   color: rgba(0, 0, 0, 0.623);
-  font: 100 1vmax 'Urbanist', sans-serif;
+  font: 400 2vmax 'Urbanist', sans-serif;
 }
 
 .aboutSectionContainer > div > div > button {
@@ -61,7 +61,7 @@
 }
 
 .aboutSectionContainer > div > div > span {
-  font: 100 1vmax 'Urbanist', sans-serif;
+  font: 300 1vmax 'Urbanist', sans-serif;
   color: rgba(0, 0, 0, 0.616);
   text-align: center;
   width: 80%;
@@ -95,16 +95,16 @@
   }
 
   .aboutSectionContainer > h1 {
-    font: 400 5vmax 'Urbanist', sans-serif;
+    font: 600 5vmax 'Urbanist', sans-serif;
     margin: 3vmax;
   }
 
   .aboutSectionContainer > div > div > p {
-    font: 100 2vmax 'Urbanist', sans-serif;
+    font: 200 2vmax 'Urbanist', sans-serif;
   }
 
   .aboutSectionContainer > div > div > span {
-    font: 100 1.4vmax 'Urbanist', sans-serif;
+    font: 200 1.4vmax 'Urbanist', sans-serif;
     width: 70%;
   }
 
@@ -113,7 +113,7 @@
   }
 
   .aboutSectionContainer2 > h2 {
-    font: 100 3vmax 'Urbanist', sans-serif;
+    font: 200 3vmax 'Urbanist', sans-serif;
     margin: 2vmax;
   }
 

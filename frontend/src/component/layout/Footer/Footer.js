@@ -96,9 +96,7 @@ const Footer = () => {
       <Left>
         <Logo>Kothari's Luggauge Mall.</Logo>
         <Desc>
-          There are many variations of passages of Lorem Ipsum available, but
-          the majority have suffered alteration in some form, by injected
-          humour, or randomised words which don’t look even slightly believable.
+        Kothari's Luggage Mall in Nashik is one of the leading businesses in the Authorised Dealers. Also known for Authorised Dealers, Authorised Dealers-Samsonite and much more. Find Address, Contact Number, Reviews and ratings, Photos, Maps of Kothari's Luggage Mall, Nashik.
         </Desc>
         <SocialContainer>
           <SocialIcon color="3B5999">
@@ -129,13 +127,13 @@ const Footer = () => {
       <Right>
         <Title>Contact</Title>
         <ContactItem>
-          <Room style={{marginRight:"10px"}}/> 622 Dixie Path , South Tobinchester 98336
+          <Room style={{marginRight:"10px"}}/> L-16, Utility Cerlife, Opp. Rajiv Gandhi Bhavan, Sharanpur road, Nashik-2 (M.S) INDIA
         </ContactItem>
         <ContactItem>
-          <Phone style={{marginRight:"10px"}}/> +1 234 56 78
+          <Phone style={{marginRight:"10px"}}/>+91-0253-2313874
         </ContactItem>
         <ContactItem>
-          <MailOutline style={{marginRight:"10px"}} /> contact@Kotharis.mall
+          <MailOutline style={{marginRight:"10px"}} /> kotharimall0102@gmail.com
         </ContactItem>
         <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
       </Right>
