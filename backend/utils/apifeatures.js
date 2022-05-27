@@ -30,9 +30,8 @@ class ApiFeatures {
 
     removeFields.forEach((key) => delete queryCopy[key]);
     // by doing so if our queryCopy container any of the fields from removeFields array it will remove it
-    // console.log(qeuryCopy)
+
     // ! Filter for Price and Rating
-    // console.log(qeuryCopy)
     // price[gt] and price[lt] as kelyane aplyala price range milun jate but mongodb mdhe operators $ ne start hotat mhnun tyasathi :-  
     let queryStr = JSON.stringify(queryCopy);
     queryStr = queryStr.replace(/\b(gt|gte|lt|lte)\b/g, (key) => `$${key}`);
