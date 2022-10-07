@@ -1,8 +1,5 @@
-# MERN E-COMMERCE TUTORIAL
-15:42:57 ==> timestamp for deployment
-
-
-Hi! My name is **Om Nikam**, I have created this ecommerce website for my college project with the help of youtube videos
+Hi! My name is **Om Nikam**, I have created this ecommerce website for my college project with the help of MERN stack. 
+This project is sponsorship based project for the client- Kothare Lugguage Mall where they want to develope their ecommerce site.
 
 # Install Dependencies
 
