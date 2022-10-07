@@ -36,6 +36,7 @@ const Home = () => {
                 Scroll <CgMouse />
               </button>
             </a>
+            <span className="developer">Project Developed by om nikam</span>
           </div>
           <div className="products">
             <div id="container" className="container">

@@ -108,7 +108,7 @@ const ConfirmOrder = ({ history }) => {
               </div>
               <div>
                 <p>GST:</p>
-                <span>₹{tax}</span>
+                <span>₹{tax.toFixed(2)}</span>
               </div>
               {/* Gift Functionality */}
               <div>
@@ -122,7 +122,7 @@ const ConfirmOrder = ({ history }) => {
               <p>
                 <b>Total:</b>
               </p>
-              <span>₹{totalPrice}</span>
+              <span>₹{`${totalPrice.toFixed(2)}`}</span>
             </div>
 
             <button onClick={proceedToPayment}>Proceed To Payment</button>

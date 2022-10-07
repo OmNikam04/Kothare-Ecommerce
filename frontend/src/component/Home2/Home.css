@@ -39,6 +39,15 @@
   border: none;
 }
 
+.developer{
+  color:#843C0A;
+  padding-bottom: 4rem;
+  font-weight:500;
+  text-transform: capitalize;
+  opacity: .6;
+  font-size: small;
+}
+
 /* .banner::after {
   content: "";
   width: 100vw;
@@ -63,9 +72,10 @@ img{
   display: block;
 }
 .container{
+  margin-top:1rem;
   width: 88vw;
-  /* width: 50vw; */
   margin: 0 auto;
+
 }
 .lg-title,
 .md-title,
@@ -289,6 +299,7 @@ img{
       display: grid;
       grid-template-columns: repeat(2, 1fr);
   }
+
 }
 @media screen and (min-width: 1200px){
   .product-items{

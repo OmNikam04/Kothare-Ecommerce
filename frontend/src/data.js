@@ -8,6 +8,3 @@ export const categories = [
     "School",
     "Picnic"
 ];
-export const brands = [
-    ""
-]

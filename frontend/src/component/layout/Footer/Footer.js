@@ -125,7 +125,7 @@ const Footer = () => {
         </List>
       </Center>
       <Right>
-        <Title>Contact</Title>
+        <Title>Devloped by - Om Nikam</Title>
         <ContactItem>
           <Room style={{marginRight:"10px"}}/> L-16, Utility Cerlife, Opp. Rajiv Gandhi Bhavan, Sharanpur road, Nashik-2 (M.S) INDIA
         </ContactItem>

@@ -173,9 +173,9 @@ const ProductDetails = ({ match }) => {
                     value your time.
                   </p>
                   <ul>
-                    <li>
+                    {/* <li>
                       Color: <span>{product.color}</span>
-                    </li>
+                    </li> */}
                     <li>
                       Available:{" "}
                       <span>
