@@ -1,3 +1,6 @@
+# This is for me if in future you wanted to make changes the do as follows:
+# 1st make change-> git add. -> git commit -> git push origin -> git push heroku main
+
 Hi! My name is **Om Nikam**, I have created this ecommerce website for my college project with the help of MERN stack. 
 This project is sponsorship based project for the client- Kothare Lugguage Mall where they want to develope their ecommerce site.
 
