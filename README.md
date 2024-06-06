@@ -11,7 +11,9 @@ Password: `admin123`
 ## Features added
 - Entire Admin Workflow
 - User Authentication and protected routes
-- 
+- Product managment system
+- Comments, Ratings, and Reviews Feature
+- Payement gateway (stripe)
 
 # Install Dependencies
 
