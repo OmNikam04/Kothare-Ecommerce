@@ -23,6 +23,13 @@
   padding: 2rem;
   transition: all 0.5s;
 }
+.MyLink{
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.493);
+  font: 200 1rem 'Urbanist', sans-serif;
+  padding: 2rem;
+  transition: all 0.5s;
+}
 .sidebar a:hover {
   color: tomato;
   transform: scale(1.1);
