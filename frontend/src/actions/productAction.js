@@ -31,6 +31,18 @@ import {
   CLEAR_ERRORS,
 } from "../constants/productConstants";
 
+// Function to set headers with token
+const setHeaders = () => {
+  const token = localStorage.getItem("token");
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return config;
+};
+
 // Get All Products
 export const getProduct =
   (keyword = "", currentPage = 1, price = [0, 20000], category, ratings = 0) =>
@@ -63,7 +75,7 @@ export const getAdminProduct = () => async (dispatch) => {
   try {
     dispatch({ type: ADMIN_PRODUCT_REQUEST });
 
-    const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/admin/products`);
+    const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/admin/products`, setHeaders());
 
     dispatch({
       type: ADMIN_PRODUCT_SUCCESS,
@@ -82,14 +94,10 @@ export const createProduct = (productData) => async (dispatch) => {
   try {
     dispatch({ type: NEW_PRODUCT_REQUEST });
 
-    const config = {
-      headers: { "Content-Type": "application/json" },
-    };
-
     const { data } = await axios.post(
       `${process.env.REACT_APP_BACKEND_URL}/admin/product/new`,
       productData,
-      config
+      setHeaders()
     );
 
     dispatch({
@@ -109,14 +117,10 @@ export const updateProduct = (id, productData) => async (dispatch) => {
   try {
     dispatch({ type: UPDATE_PRODUCT_REQUEST });
 
-    const config = {
-      headers: { "Content-Type": "application/json" },
-    };
-
     const { data } = await axios.put(
       `${process.env.REACT_APP_BACKEND_URL}/admin/product/${id}`,
       productData,
-      config
+      setHeaders()
     );
 
     dispatch({
@@ -136,7 +140,10 @@ export const deleteProduct = (id) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_PRODUCT_REQUEST });
 
-    const { data } = await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/admin/product/${id}`);
+    const { data } = await axios.delete(
+      `${process.env.REACT_APP_BACKEND_URL}/admin/product/${id}`,
+      setHeaders()
+    );
 
     dispatch({
       type: DELETE_PRODUCT_SUCCESS,
@@ -174,11 +181,12 @@ export const newReview = (reviewData) => async (dispatch) => {
   try {
     dispatch({ type: NEW_REVIEW_REQUEST });
 
-    const config = {
-      headers: { "Content-Type": "application/json" },
-    };
-
-    const { data } = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/review`, reviewData, config);
+    const { data } = await axios.put
+    (
+      `${process.env.REACT_APP_BACKEND_URL}/review`,
+      reviewData,
+      setHeaders()
+    );
 
     dispatch({
       type: NEW_REVIEW_SUCCESS,
@@ -217,7 +225,8 @@ export const deleteReviews = (reviewId, productId) => async (dispatch) => {
     dispatch({ type: DELETE_REVIEW_REQUEST });
 
     const { data } = await axios.delete(
-      `${process.env.REACT_APP_BACKEND_URL}/reviews?id=${reviewId}&productId=${productId}`
+      `${process.env.REACT_APP_BACKEND_URL}/reviews?id=${reviewId}&productId=${productId}`,
+      setHeaders()
     );
 
     dispatch({

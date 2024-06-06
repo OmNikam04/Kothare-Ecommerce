@@ -1,3 +1,4 @@
+import axios from 'axios';
 import {
   LOGIN_REQUEST,
   LOGIN_FAIL,
@@ -35,15 +36,29 @@ import {
   USER_DETAILS_SUCCESS,
   USER_DETAILS_FAIL,
   CLEAR_ERRORS,
-} from "../constants/userConstants";
-import axios from "axios";
+} from '../constants/userConstants';
+
+// Utility function to get the token from localStorage
+const getToken = () => {
+  return localStorage.getItem('token');
+};
+
+// Set headers with token
+const setHeaders = () => {
+  return {
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${getToken()}`,
+    },
+  };
+};
 
 // Login
 export const login = (email, password) => async (dispatch) => {
   try {
     dispatch({ type: LOGIN_REQUEST });
 
-    const config = { headers: { "Content-Type": "application/json" } };
+    const config = { headers: { 'Content-Type': 'application/json' } };
 
     const { data } = await axios.post(
       `${process.env.REACT_APP_BACKEND_URL}/login`,
@@ -62,9 +77,13 @@ export const register = (userData) => async (dispatch) => {
   try {
     dispatch({ type: REGISTER_USER_REQUEST });
 
-    const config = { headers: { "Content-Type": "multipart/form-data" } };
+    const config = { headers: { 'Content-Type': 'multipart/form-data' } };
 
-    const { data } = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/register`, userData, config);
+    const { data } = await axios.post(
+      `${process.env.REACT_APP_BACKEND_URL}/register`,
+      userData,
+      config
+    );
 
     dispatch({ type: REGISTER_USER_SUCCESS, payload: data.user });
   } catch (error) {
@@ -72,7 +91,7 @@ export const register = (userData) => async (dispatch) => {
       type: REGISTER_USER_FAIL,
       payload: error.response.data.message,
     });
-    console.log({error})
+    console.log({ error });
   }
 };
 
@@ -81,7 +100,10 @@ export const loadUser = () => async (dispatch) => {
   try {
     dispatch({ type: LOAD_USER_REQUEST });
 
-    const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/me`);
+    const { data } = await axios.get(
+      `${process.env.REACT_APP_BACKEND_URL}/me`,
+      setHeaders()
+    );
 
     dispatch({ type: LOAD_USER_SUCCESS, payload: data.user });
   } catch (error) {
@@ -105,9 +127,13 @@ export const updateProfile = (userData) => async (dispatch) => {
   try {
     dispatch({ type: UPDATE_PROFILE_REQUEST });
 
-    const config = { headers: { "Content-Type": "multipart/form-data" } };
+    const config = { headers: { 'Content-Type': 'multipart/form-data' } };
 
-    const { data } = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/me/update`, userData, config);
+    const { data } = await axios.put(
+      `${process.env.REACT_APP_BACKEND_URL}/me/update`,
+      userData,
+      setHeaders()
+    );
 
     dispatch({ type: UPDATE_PROFILE_SUCCESS, payload: data.success });
   } catch (error) {
@@ -123,12 +149,12 @@ export const updatePassword = (passwords) => async (dispatch) => {
   try {
     dispatch({ type: UPDATE_PASSWORD_REQUEST });
 
-    const config = { headers: { "Content-Type": "application/json" } };
+    const config = { headers: { 'Content-Type': 'application/json' } };
 
     const { data } = await axios.put(
       `${process.env.REACT_APP_BACKEND_URL}/password/update`,
       passwords,
-      config
+      setHeaders()
     );
 
     dispatch({ type: UPDATE_PASSWORD_SUCCESS, payload: data.success });
@@ -145,9 +171,13 @@ export const forgotPassword = (email) => async (dispatch) => {
   try {
     dispatch({ type: FORGOT_PASSWORD_REQUEST });
 
-    const config = { headers: { "Content-Type": "application/json" } };
+    const config = { headers: { 'Content-Type': 'application/json' } };
 
-    const { data } = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/password/forgot`, email, config);
+    const { data } = await axios.post(
+      `${process.env.REACT_APP_BACKEND_URL}/password/forgot`,
+      email,
+      config
+    );
 
     dispatch({ type: FORGOT_PASSWORD_SUCCESS, payload: data.message });
   } catch (error) {
@@ -163,7 +193,7 @@ export const resetPassword = (token, passwords) => async (dispatch) => {
   try {
     dispatch({ type: RESET_PASSWORD_REQUEST });
 
-    const config = { headers: { "Content-Type": "application/json" } };
+    const config = { headers: { 'Content-Type': 'application/json' } };
 
     const { data } = await axios.put(
       `${process.env.REACT_APP_BACKEND_URL}/password/reset/${token}`,
@@ -184,7 +214,10 @@ export const resetPassword = (token, passwords) => async (dispatch) => {
 export const getAllUsers = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_USERS_REQUEST });
-    const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/admin/users`);
+    const { data } = await axios.get(
+      `${process.env.REACT_APP_BACKEND_URL}/admin/users`,
+      setHeaders()
+    );
 
     dispatch({ type: ALL_USERS_SUCCESS, payload: data.users });
   } catch (error) {
@@ -196,7 +229,10 @@ export const getAllUsers = () => async (dispatch) => {
 export const getUserDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: USER_DETAILS_REQUEST });
-    const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/admin/user/${id}`);
+    const { data } = await axios.get(
+      `${process.env.REACT_APP_BACKEND_URL}/admin/user/${id}`,
+      setHeaders()
+    );
 
     dispatch({ type: USER_DETAILS_SUCCESS, payload: data.user });
   } catch (error) {
@@ -209,40 +245,44 @@ export const updateUser = (id, userData) => async (dispatch) => {
   try {
     dispatch({ type: UPDATE_USER_REQUEST });
 
-    const config = { headers: { "Content-Type": "application/json" } };
+    const config = { headers: { 'Content-Type': 'application/json' } };
 
     const { data } = await axios.put(
       `${process.env.REACT_APP_BACKEND_URL}/admin/user/${id}`,
       userData,
-      config
+      setHeaders()
     );
 
-    dispatch({ type: UPDATE_USER_SUCCESS, payload: data.success });
-  } catch (error) {
-    dispatch({
-      type: UPDATE_USER_FAIL,
-      payload: error.response.data.message,
-    });
-  }
-};
-
-// Delete User
-export const deleteUser = (id) => async (dispatch) => {
-  try {
-    dispatch({ type: DELETE_USER_REQUEST });
-
-    const { data } = await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/admin/user/${id}`);
-
-    dispatch({ type: DELETE_USER_SUCCESS, payload: data });
-  } catch (error) {
-    dispatch({
-      type: DELETE_USER_FAIL,
-      payload: error.response.data.message,
-    });
-  }
-};
-
-// Clearing Errors
-export const clearErrors = () => async (dispatch) => {
-  dispatch({ type: CLEAR_ERRORS });
-};
+    dispatch({ type: UPDATE_USER_SUCCESS, payload: data.success})
+    } catch (error) {
+      dispatch({
+        type: UPDATE_USER_FAIL,
+        payload: error.response.data.message,
+      });
+    }
+  };
+  
+  // Delete User
+  export const deleteUser = (id) => async (dispatch) => {
+    try {
+      dispatch({ type: DELETE_USER_REQUEST });
+  
+      const { data } = await axios.delete(
+        `${process.env.REACT_APP_BACKEND_URL}/admin/user/${id}`,
+        setHeaders()
+      );
+  
+      dispatch({ type: DELETE_USER_SUCCESS, payload: data });
+    } catch (error) {
+      dispatch({
+        type: DELETE_USER_FAIL,
+        payload: error.response.data.message,
+      });
+    }
+  };
+  
+  // Clearing Errors
+  export const clearErrors = () => async (dispatch) => {
+    dispatch({ type: CLEAR_ERRORS });
+  };
+  

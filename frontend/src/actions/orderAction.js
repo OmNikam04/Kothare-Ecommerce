@@ -20,19 +20,27 @@ import {
   CLEAR_ERRORS,
 } from "../constants/orderConstants";
 
-import axios from "axios";
-
+// Function to set headers with token
+const setHeaders = () => {
+  const token = localStorage.getItem("token");
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return config;
+};
 // Create Order
 export const createOrder = (order) => async (dispatch) => {
   try {
     dispatch({ type: CREATE_ORDER_REQUEST });
 
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-    const { data } = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/order/new`, order, config);
+    const { data } = await axios.post(
+      `${process.env.REACT_APP_BACKEND_URL}/order/new`,
+      order,
+      setHeaders()
+    );
 
     dispatch({ type: CREATE_ORDER_SUCCESS, payload: data });
   } catch (error) {
@@ -48,14 +56,16 @@ export const myOrders = () => async (dispatch) => {
   try {
     dispatch({ type: MY_ORDERS_REQUEST });
 
-    const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/orders/me`);
+    const { data } = await axios.get(
+      `${process.env.REACT_APP_BACKEND_URL}/orders/me`,
+      setHeaders()
+    );
 
     dispatch({ type: MY_ORDERS_SUCCESS, payload: data.orders });
   } catch (error) {
     dispatch({
       type: MY_ORDERS_FAIL,
-      // payload: error.response.data.message,
-      payload: error,
+      payload: error.response.data.message,
     });
   }
 };
@@ -65,7 +75,10 @@ export const getAllOrders = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_ORDERS_REQUEST });
 
-    const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/admin/orders`);
+    const { data } = await axios.get(
+      `${process.env.REACT_APP_BACKEND_URL}/admin/orders`,
+      setHeaders()
+    );
 
     dispatch({ type: ALL_ORDERS_SUCCESS, payload: data.orders });
   } catch (error) {
@@ -81,15 +94,10 @@ export const updateOrder = (id, order) => async (dispatch) => {
   try {
     dispatch({ type: UPDATE_ORDER_REQUEST });
 
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
     const { data } = await axios.put(
       `${process.env.REACT_APP_BACKEND_URL}/admin/order/${id}`,
       order,
-      config
+      setHeaders()
     );
 
     dispatch({ type: UPDATE_ORDER_SUCCESS, payload: data.success });
@@ -106,7 +114,10 @@ export const deleteOrder = (id) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_ORDER_REQUEST });
 
-    const { data } = await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/admin/order/${id}`);
+    const { data } = await axios.delete(
+      `${process.env.REACT_APP_BACKEND_URL}/admin/order/${id}`,
+      setHeaders()
+    );
 
     dispatch({ type: DELETE_ORDER_SUCCESS, payload: data.success });
   } catch (error) {
@@ -122,7 +133,10 @@ export const getOrderDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: ORDER_DETAILS_REQUEST });
 
-    const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/order/${id}`);
+    const { data } = await axios.get(
+      `${process.env.REACT_APP_BACKEND_URL}/order/${id}`,
+      setHeaders()
+    );
 
     dispatch({ type: ORDER_DETAILS_SUCCESS, payload: data.order });
   } catch (error) {
@@ -137,3 +151,8 @@ export const getOrderDetails = (id) => async (dispatch) => {
 export const clearErrors = () => async (dispatch) => {
   dispatch({ type: CLEAR_ERRORS });
 };
+
+
+
+
+
