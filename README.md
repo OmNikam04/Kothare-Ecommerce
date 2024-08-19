@@ -1,5 +1,5 @@
-Hi! My name is **Om Nikam**, I have created this ecommerce website for my college project with the help of MERN stack. 
-This project is sponsorship based project for the client- Kothare Lugguage Mall where they want to develope their ecommerce site.
+Hi!  We have created this ecommerce website for my college project with the help of MERN stack. 
+This project is sponsorship based project for the client- Kothari Lugguage Mall where they want to develope their ecommerce site.
 
 ## Try out features by login as Admin
 UserName: `admin`
